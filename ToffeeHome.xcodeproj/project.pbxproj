@@ -7,15 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292BD83C2A80CA56002498B7 /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83B2A80CA56002498B7 /* FSPagerView.swift */; };
+		292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */; };
+		292BD8402A80CABF002498B7 /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83F2A80CABE002498B7 /* FSPageControl.swift */; };
+		292BD8422A80CACE002498B7 /* FSPagerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD8412A80CACE002498B7 /* FSPagerCollectionView.swift */; };
+		292BD8442A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD8432A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift */; };
+		292BD8462A80CB01002498B7 /* FSPageViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD8452A80CB01002498B7 /* FSPageViewLayout.swift */; };
+		292BD8482A80CB09002498B7 /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD8472A80CB09002498B7 /* FSPageViewTransformer.swift */; };
 		293FC87B2A80B83E009299B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87A2A80B83E009299B5 /* AppDelegate.swift */; };
 		293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87C2A80B83E009299B5 /* SceneDelegate.swift */; };
 		293FC87F2A80B83E009299B5 /* ToffeeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87E2A80B83E009299B5 /* ToffeeHomeViewController.swift */; };
 		293FC8822A80B83E009299B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8802A80B83E009299B5 /* Main.storyboard */; };
 		293FC8842A80B83F009299B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8832A80B83F009299B5 /* Assets.xcassets */; };
 		293FC8872A80B83F009299B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8852A80B83F009299B5 /* LaunchScreen.storyboard */; };
+		293FC8962A80C27E009299B5 /* PagerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */; };
+		293FC8972A80C27E009299B5 /* PagerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		292BD83B2A80CA56002498B7 /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
+		292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewCell.swift; sourceTree = "<group>"; };
+		292BD83F2A80CABE002498B7 /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
+		292BD8412A80CACE002498B7 /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerCollectionView.swift; sourceTree = "<group>"; };
+		292BD8432A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewLayoutAttributes.swift; sourceTree = "<group>"; };
+		292BD8452A80CB01002498B7 /* FSPageViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewLayout.swift; sourceTree = "<group>"; };
+		292BD8472A80CB09002498B7 /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewTransformer.swift; sourceTree = "<group>"; };
 		293FC8772A80B83E009299B5 /* ToffeeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToffeeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		293FC87A2A80B83E009299B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		293FC87C2A80B83E009299B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +40,8 @@
 		293FC8832A80B83F009299B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		293FC8862A80B83F009299B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		293FC8882A80B83F009299B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerCollectionViewCell.swift; sourceTree = "<group>"; };
+		293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagerCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +55,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		292BD8392A80C9AD002498B7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				292BD83A2A80C9D7002498B7 /* FSPagerView */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		292BD83A2A80C9D7002498B7 /* FSPagerView */ = {
+			isa = PBXGroup;
+			children = (
+				292BD83B2A80CA56002498B7 /* FSPagerView.swift */,
+				292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */,
+				292BD83F2A80CABE002498B7 /* FSPageControl.swift */,
+				292BD8412A80CACE002498B7 /* FSPagerCollectionView.swift */,
+				292BD8432A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift */,
+				292BD8452A80CB01002498B7 /* FSPageViewLayout.swift */,
+				292BD8472A80CB09002498B7 /* FSPageViewTransformer.swift */,
+			);
+			name = FSPagerView;
+			sourceTree = "<group>";
+		};
 		293FC86E2A80B83E009299B5 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +98,8 @@
 			children = (
 				293FC88E2A80B862009299B5 /* App */,
 				293FC8912A80BA23009299B5 /* ViewController */,
+				293FC8932A80C162009299B5 /* Views */,
+				292BD8392A80C9AD002498B7 /* Helpers */,
 				293FC88F2A80B871009299B5 /* Storybaord */,
 				293FC8902A80B892009299B5 /* SupportsFiles */,
 			);
@@ -99,6 +141,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		293FC8932A80C162009299B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */,
+				293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,6 +182,7 @@
 				TargetAttributes = {
 					293FC8762A80B83E009299B5 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -159,6 +211,7 @@
 			files = (
 				293FC8872A80B83F009299B5 /* LaunchScreen.storyboard in Resources */,
 				293FC8842A80B83F009299B5 /* Assets.xcassets in Resources */,
+				293FC8972A80C27E009299B5 /* PagerCollectionViewCell.xib in Resources */,
 				293FC8822A80B83E009299B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,9 +223,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				292BD8402A80CABF002498B7 /* FSPageControl.swift in Sources */,
 				293FC87F2A80B83E009299B5 /* ToffeeHomeViewController.swift in Sources */,
+				292BD8462A80CB01002498B7 /* FSPageViewLayout.swift in Sources */,
+				292BD83C2A80CA56002498B7 /* FSPagerView.swift in Sources */,
 				293FC87B2A80B83E009299B5 /* AppDelegate.swift in Sources */,
+				292BD8482A80CB09002498B7 /* FSPageViewTransformer.swift in Sources */,
+				293FC8962A80C27E009299B5 /* PagerCollectionViewCell.swift in Sources */,
+				292BD8422A80CACE002498B7 /* FSPagerCollectionView.swift in Sources */,
 				293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */,
+				292BD8442A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift in Sources */,
+				292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3MX7YWN9ZT;
@@ -335,6 +397,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.khaled.com.ToffeeHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -345,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3MX7YWN9ZT;
