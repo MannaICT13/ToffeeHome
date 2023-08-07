@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		293FC87B2A80B83E009299B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87A2A80B83E009299B5 /* AppDelegate.swift */; };
 		293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87C2A80B83E009299B5 /* SceneDelegate.swift */; };
-		293FC87F2A80B83E009299B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87E2A80B83E009299B5 /* ViewController.swift */; };
+		293FC87F2A80B83E009299B5 /* ToffeeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87E2A80B83E009299B5 /* ToffeeHomeViewController.swift */; };
 		293FC8822A80B83E009299B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8802A80B83E009299B5 /* Main.storyboard */; };
 		293FC8842A80B83F009299B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8832A80B83F009299B5 /* Assets.xcassets */; };
 		293FC8872A80B83F009299B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8852A80B83F009299B5 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		293FC8772A80B83E009299B5 /* ToffeeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToffeeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		293FC87A2A80B83E009299B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		293FC87C2A80B83E009299B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		293FC87E2A80B83E009299B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		293FC87E2A80B83E009299B5 /* ToffeeHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToffeeHomeViewController.swift; sourceTree = "<group>"; };
 		293FC8812A80B83E009299B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		293FC8832A80B83F009299B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		293FC8862A80B83F009299B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,47 @@
 		293FC8792A80B83E009299B5 /* ToffeeHome */ = {
 			isa = PBXGroup;
 			children = (
-				293FC87A2A80B83E009299B5 /* AppDelegate.swift */,
-				293FC87C2A80B83E009299B5 /* SceneDelegate.swift */,
-				293FC87E2A80B83E009299B5 /* ViewController.swift */,
-				293FC8802A80B83E009299B5 /* Main.storyboard */,
-				293FC8832A80B83F009299B5 /* Assets.xcassets */,
-				293FC8852A80B83F009299B5 /* LaunchScreen.storyboard */,
-				293FC8882A80B83F009299B5 /* Info.plist */,
+				293FC88E2A80B862009299B5 /* App */,
+				293FC8912A80BA23009299B5 /* ViewController */,
+				293FC88F2A80B871009299B5 /* Storybaord */,
+				293FC8902A80B892009299B5 /* SupportsFiles */,
 			);
 			path = ToffeeHome;
+			sourceTree = "<group>";
+		};
+		293FC88E2A80B862009299B5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				293FC87A2A80B83E009299B5 /* AppDelegate.swift */,
+				293FC87C2A80B83E009299B5 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		293FC88F2A80B871009299B5 /* Storybaord */ = {
+			isa = PBXGroup;
+			children = (
+				293FC8852A80B83F009299B5 /* LaunchScreen.storyboard */,
+				293FC8802A80B83E009299B5 /* Main.storyboard */,
+			);
+			path = Storybaord;
+			sourceTree = "<group>";
+		};
+		293FC8902A80B892009299B5 /* SupportsFiles */ = {
+			isa = PBXGroup;
+			children = (
+				293FC8832A80B83F009299B5 /* Assets.xcassets */,
+				293FC8882A80B83F009299B5 /* Info.plist */,
+			);
+			path = SupportsFiles;
+			sourceTree = "<group>";
+		};
+		293FC8912A80BA23009299B5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				293FC87E2A80B83E009299B5 /* ToffeeHomeViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293FC87F2A80B83E009299B5 /* ViewController.swift in Sources */,
+				293FC87F2A80B83E009299B5 /* ToffeeHomeViewController.swift in Sources */,
 				293FC87B2A80B83E009299B5 /* AppDelegate.swift in Sources */,
 				293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */,
 			);
@@ -289,7 +321,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3MX7YWN9ZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ToffeeHome/Info.plist;
+				INFOPLIST_FILE = ToffeeHome/SupportsFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3MX7YWN9ZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ToffeeHome/Info.plist;
+				INFOPLIST_FILE = ToffeeHome/SupportsFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
