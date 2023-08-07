@@ -8,6 +8,7 @@
 import UIKit
 
 class ToffeeHomeViewController: UIViewController {
+    static let headerElementKind = "header-element-kind"
     
     enum Section {
         case pagerView
@@ -47,10 +48,15 @@ extension ToffeeHomeViewController {
     private func createChaneelLayoutSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(80), heightDimension: .absolute(80)), subitems: [item])
+        
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
         section.interGroupSpacing = 8.0
         section.orthogonalScrollingBehavior = .continuous
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKind, alignment: .top)
+        
+        section.boundarySupplementaryItems = [header]
+        
         return section
     }
 
@@ -98,6 +104,14 @@ extension ToffeeHomeViewController {
                 return cell
             }
         })
+        
+        let supplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKind) { supplementaryView, elementKind, indexPath in
+            supplementaryView.title = "Popular TV Channels"
+        }
+        
+        dataSource.supplementaryViewProvider = {(view, kind, index) in
+            return self.collectionView.dequeueConfiguredReusableSupplementary(using: supplementaryRegistration, for: index)
+        }
         
         var snapShot = Snapshot()
         snapShot.appendSections([.pagerView, .channels])
