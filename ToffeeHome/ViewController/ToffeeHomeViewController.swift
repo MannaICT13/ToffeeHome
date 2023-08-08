@@ -8,12 +8,12 @@
 import UIKit
 
 class ToffeeHomeViewController: UIViewController {
-    static let headerElementKind = "header-element-kind"
-    static let headerElementKindOfCategory = "header-element-kind-of-category"
-    static let headerElementKindOfMoments = "header-element-kind-of-moments"
-    static let headerElementKindOfTranding = "header-element-kind-of-tranding"
-    static let headerElementKindOfFeed = "header-element-kind-of-feed"
-    
+//    static let headerElementKind = "header-element-kind"
+//    static let headerElementKindOfCategory = "header-element-kind-of-category"
+//    static let headerElementKindOfMoments = "header-element-kind-of-moments"
+//    static let headerElementKindOfTranding = "header-element-kind-of-tranding"
+//    static let headerElementKindOfFeed = "header-element-kind-of-feed"
+//
     enum Section {
         case pagerView
         case channels
@@ -139,7 +139,7 @@ extension ToffeeHomeViewController {
             }
         })
         
-        let supplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKind) { supplementaryView, elementKind, indexPath in
+        let supplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: SupplementraryHeader.headerElementKind) { supplementaryView, elementKind, indexPath in
             supplementaryView.title = "Popular TV Channels"
             supplementaryView.callback.didTappedSeeAll = {[weak self] in
                 guard self == self else { return }
@@ -147,14 +147,14 @@ extension ToffeeHomeViewController {
             }
         }
         
-        let categorySupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKindOfCategory) { supplementaryView, elementKind, indexPath in
+        let categorySupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: SupplementraryHeader.headerElementKindOfCategory) { supplementaryView, elementKind, indexPath in
             supplementaryView.title = "Categories"
             supplementaryView.callback.didTappedSeeAll = {[weak self] in
                 guard self == self else { return }
                 print("did Tapped See All....Category")
             }
         }
-        let momentsSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKindOfMoments) { supplementaryView, elementKind, indexPath in
+        let momentsSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: SupplementraryHeader.headerElementKindOfMoments) { supplementaryView, elementKind, indexPath in
             supplementaryView.title = "Moments"
             supplementaryView.isRightbuttonHidden = true
             supplementaryView.callback.didTappedSeeAll = {[weak self] in
@@ -163,7 +163,7 @@ extension ToffeeHomeViewController {
             }
         }
         
-        let trendingSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKindOfTranding) { supplementaryView, elementKind, indexPath in
+        let trendingSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: SupplementraryHeader.headerElementKindOfTranding) { supplementaryView, elementKind, indexPath in
             supplementaryView.title = "Trending Channels"
             supplementaryView.callback.didTappedSeeAll = {[weak self] in
                 guard self == self else { return }
@@ -171,7 +171,7 @@ extension ToffeeHomeViewController {
             }
         }
         
-        let feedSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKindOfFeed) { supplementaryView, elementKind, indexPath in
+        let feedSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: SupplementraryHeader.headerElementKindOfFeed) { supplementaryView, elementKind, indexPath in
             supplementaryView.title = "Feed"
             supplementaryView.isRightbuttonHidden = true
             supplementaryView.backgroundColor = .white
@@ -183,15 +183,15 @@ extension ToffeeHomeViewController {
         
         dataSource.supplementaryViewProvider = {(view, kind, index) in
             switch kind {
-            case ToffeeHomeViewController.headerElementKind:
+            case SupplementraryHeader.headerElementKind:
                 return self.collectionView.dequeueConfiguredReusableSupplementary(using: supplementaryRegistration, for: index)
-            case ToffeeHomeViewController.headerElementKindOfCategory:
+            case SupplementraryHeader.headerElementKindOfCategory:
                 return self.collectionView.dequeueConfiguredReusableSupplementary(using: categorySupplementaryRegistration, for: index)
-            case ToffeeHomeViewController.headerElementKindOfMoments:
+            case SupplementraryHeader.headerElementKindOfMoments:
                 return self.collectionView.dequeueConfiguredReusableSupplementary(using: momentsSupplementaryRegistration, for: index)
-            case ToffeeHomeViewController.headerElementKindOfTranding:
+            case SupplementraryHeader.headerElementKindOfTranding:
                 return self.collectionView.dequeueConfiguredReusableSupplementary(using: trendingSupplementaryRegistration, for: index)
-            case ToffeeHomeViewController.headerElementKindOfFeed:
+            case SupplementraryHeader.headerElementKindOfFeed:
                 return self.collectionView.dequeueConfiguredReusableSupplementary(using: feedSupplementaryRegistration, for: index)
             default:
                 return nil

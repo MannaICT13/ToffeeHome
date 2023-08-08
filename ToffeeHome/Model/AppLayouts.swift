@@ -27,7 +27,7 @@ class AppLayouts {
         section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
         section.interGroupSpacing = 8.0
         section.orthogonalScrollingBehavior = .continuous
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKind, alignment: .top)
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: SupplementraryHeader.headerElementKind, alignment: .top)
         
         section.boundarySupplementaryItems = [header]
         
@@ -42,7 +42,7 @@ class AppLayouts {
         section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
         section.interGroupSpacing = 8.0
         section.orthogonalScrollingBehavior = .continuous
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfCategory, alignment: .top)
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: SupplementraryHeader.headerElementKindOfCategory, alignment: .top)
         
         section.boundarySupplementaryItems = [header]
         
@@ -57,7 +57,7 @@ class AppLayouts {
         section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
         section.interGroupSpacing = 8.0
         section.orthogonalScrollingBehavior = .continuous
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfMoments, alignment: .top)
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: SupplementraryHeader.headerElementKindOfMoments, alignment: .top)
         
         section.boundarySupplementaryItems = [header]
         
@@ -72,7 +72,7 @@ class AppLayouts {
         section.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 8.0, bottom: .zero, trailing: .zero)
             section.interGroupSpacing = 8.0
             section.orthogonalScrollingBehavior = .continuous
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfTranding, alignment: .top)
+            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: SupplementraryHeader.headerElementKindOfTranding, alignment: .top)
             
             section.boundarySupplementaryItems = [header]
             
@@ -85,7 +85,7 @@ class AppLayouts {
             
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = 8.0
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfFeed, alignment: .top)
+            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: SupplementraryHeader.headerElementKindOfFeed, alignment: .top)
         header.pinToVisibleBounds = true
             section.boundarySupplementaryItems = [header]
             

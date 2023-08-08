@@ -30,20 +30,20 @@
                                         <rect key="frame" x="0.0" y="461" width="400" height="92"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toffee" translatesAutoresizingMaskIntoConstraints="NO" id="iqw-YX-cML">
-                                                <rect key="frame" x="16" y="8" width="20" height="20"/>
+                                                <rect key="frame" x="16" y="8" width="28" height="28"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="Mje-dl-xfC"/>
-                                                    <constraint firstAttribute="width" constant="20" id="ZOR-av-cJo"/>
+                                                    <constraint firstAttribute="height" constant="28" id="Mje-dl-xfC"/>
+                                                    <constraint firstAttribute="width" constant="28" id="ZOR-av-cJo"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode 2 | Drills Ertugrul | Session 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAP-uh-B42">
-                                                <rect key="frame" x="40" y="11" width="332" height="14.333333333333336"/>
+                                                <rect key="frame" x="48" y="15" width="324" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQV-bt-9Fz">
-                                                <rect key="frame" x="372" y="8" width="20" height="20"/>
+                                                <rect key="frame" x="372" y="12" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Npx-kP-kNO"/>
                                                     <constraint firstAttribute="width" constant="20" id="krq-8C-nMZ"/>
@@ -54,19 +54,19 @@
                                                 <state key="normal" image="ellipsis" catalog="system"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toffee 3h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXs-L6-qZ4">
-                                                <rect key="frame" x="36" y="29.333333333333311" width="55" height="14.333333333333332"/>
+                                                <rect key="frame" x="44" y="33.333333333333314" width="55" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15.5K Views" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fB9-bO-EDb">
-                                                <rect key="frame" x="36" y="47.666666666666686" width="70" height="18.333333333333329"/>
+                                                <rect key="frame" x="44" y="51.666666666666629" width="70" height="18.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNV-e8-0Lk">
-                                                <rect key="frame" x="179" y="47.666666666666686" width="42.333333333333343" height="18.333333333333329"/>
+                                                <rect key="frame" x="179" y="51.666666666666629" width="42.333333333333343" height="18.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -75,7 +75,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpd-W5-MRk">
-                                                <rect key="frame" x="337.33333333333331" y="47.666666666666686" width="54.666666666666686" height="18"/>
+                                                <rect key="frame" x="337.33333333333331" y="51.666666666666629" width="54.666666666666686" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
