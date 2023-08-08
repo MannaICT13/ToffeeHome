@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2920D0CB2A81F70B0090D375 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920D0C92A81F70B0090D375 /* CategoriesCollectionViewCell.swift */; };
+		2920D0CC2A81F70B0090D375 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */; };
+		2920D0CF2A8212BA0090D375 /* MomentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920D0CD2A8212BA0090D375 /* MomentsCollectionViewCell.swift */; };
+		2920D0D02A8212BA0090D375 /* MomentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */; };
+		2920D0D32A8218C80090D375 /* TrendingChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */; };
+		2920D0D42A8218C80090D375 /* TrendingChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */; };
 		292BD83C2A80CA56002498B7 /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83B2A80CA56002498B7 /* FSPagerView.swift */; };
 		292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */; };
 		292BD8402A80CABF002498B7 /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83F2A80CABE002498B7 /* FSPageControl.swift */; };
@@ -26,9 +32,19 @@
 		293FC8872A80B83F009299B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8852A80B83F009299B5 /* LaunchScreen.storyboard */; };
 		293FC8962A80C27E009299B5 /* PagerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */; };
 		293FC8972A80C27E009299B5 /* PagerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */; };
+		297E9DA32A8227BF00D2491F /* UIButton + Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DA22A8227BF00D2491F /* UIButton + Additions.swift */; };
+		297E9DA62A822ABA00D2491F /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DA42A822ABA00D2491F /* FeedCollectionViewCell.swift */; };
+		297E9DA72A822ABA00D2491F /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 297E9DA52A822ABA00D2491F /* FeedCollectionViewCell.xib */; };
+		297E9DA92A82451000D2491F /* UIView + Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DA82A82451000D2491F /* UIView + Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2920D0C92A81F70B0090D375 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		2920D0CD2A8212BA0090D375 /* MomentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCollectionViewCell.swift; sourceTree = "<group>"; };
+		2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MomentsCollectionViewCell.xib; sourceTree = "<group>"; };
+		2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+		2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingChannelCollectionViewCell.xib; sourceTree = "<group>"; };
 		292BD83B2A80CA56002498B7 /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
 		292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewCell.swift; sourceTree = "<group>"; };
 		292BD83F2A80CABE002498B7 /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
@@ -50,6 +66,10 @@
 		293FC8882A80B83F009299B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerCollectionViewCell.swift; sourceTree = "<group>"; };
 		293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagerCollectionViewCell.xib; sourceTree = "<group>"; };
+		297E9DA22A8227BF00D2491F /* UIButton + Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Additions.swift"; sourceTree = "<group>"; };
+		297E9DA42A822ABA00D2491F /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		297E9DA52A822ABA00D2491F /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
+		297E9DA82A82451000D2491F /* UIView + Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +128,7 @@
 				293FC8912A80BA23009299B5 /* ViewController */,
 				293FC8932A80C162009299B5 /* Views */,
 				292BD8392A80C9AD002498B7 /* Helpers */,
+				297E9DA12A82279100D2491F /* Extensions */,
 				293FC88F2A80B871009299B5 /* Storybaord */,
 				293FC8902A80B892009299B5 /* SupportsFiles */,
 			);
@@ -158,8 +179,25 @@
 				292BD84A2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib */,
 				292BD84D2A80FEBF002498B7 /* CustomHeaderView.swift */,
 				292BD84E2A80FEBF002498B7 /* CustomHeaderView.xib */,
+				2920D0C92A81F70B0090D375 /* CategoriesCollectionViewCell.swift */,
+				2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */,
+				2920D0CD2A8212BA0090D375 /* MomentsCollectionViewCell.swift */,
+				2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */,
+				2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */,
+				2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */,
+				297E9DA42A822ABA00D2491F /* FeedCollectionViewCell.swift */,
+				297E9DA52A822ABA00D2491F /* FeedCollectionViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		297E9DA12A82279100D2491F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				297E9DA22A8227BF00D2491F /* UIButton + Additions.swift */,
+				297E9DA82A82451000D2491F /* UIView + Additions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,11 +259,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2920D0D02A8212BA0090D375 /* MomentsCollectionViewCell.xib in Resources */,
+				2920D0D42A8218C80090D375 /* TrendingChannelCollectionViewCell.xib in Resources */,
 				293FC8872A80B83F009299B5 /* LaunchScreen.storyboard in Resources */,
 				293FC8842A80B83F009299B5 /* Assets.xcassets in Resources */,
 				293FC8972A80C27E009299B5 /* PagerCollectionViewCell.xib in Resources */,
 				292BD84C2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib in Resources */,
+				2920D0CC2A81F70B0090D375 /* CategoriesCollectionViewCell.xib in Resources */,
 				292BD8502A80FEBF002498B7 /* CustomHeaderView.xib in Resources */,
+				297E9DA72A822ABA00D2491F /* FeedCollectionViewCell.xib in Resources */,
 				293FC8822A80B83E009299B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,9 +287,15 @@
 				292BD8482A80CB09002498B7 /* FSPageViewTransformer.swift in Sources */,
 				293FC8962A80C27E009299B5 /* PagerCollectionViewCell.swift in Sources */,
 				292BD8422A80CACE002498B7 /* FSPagerCollectionView.swift in Sources */,
+				2920D0CB2A81F70B0090D375 /* CategoriesCollectionViewCell.swift in Sources */,
 				292BD84F2A80FEBF002498B7 /* CustomHeaderView.swift in Sources */,
+				2920D0CF2A8212BA0090D375 /* MomentsCollectionViewCell.swift in Sources */,
 				292BD84B2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift in Sources */,
 				293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */,
+				297E9DA32A8227BF00D2491F /* UIButton + Additions.swift in Sources */,
+				297E9DA92A82451000D2491F /* UIView + Additions.swift in Sources */,
+				297E9DA62A822ABA00D2491F /* FeedCollectionViewCell.swift in Sources */,
+				2920D0D32A8218C80090D375 /* TrendingChannelCollectionViewCell.swift in Sources */,
 				292BD8442A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */,
 			);
@@ -403,8 +451,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,8 +480,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
