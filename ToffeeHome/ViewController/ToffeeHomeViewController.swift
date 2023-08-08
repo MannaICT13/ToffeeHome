@@ -46,85 +46,6 @@ class ToffeeHomeViewController: UIViewController {
 }
 
 extension ToffeeHomeViewController {
-    private func createCollectionLayoutSection() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(193.0)), subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
-        return section
-    }
-    
-    private func createChaneelLayoutSection() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(80), heightDimension: .absolute(80)), subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
-        section.interGroupSpacing = 8.0
-        section.orthogonalScrollingBehavior = .continuous
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKind, alignment: .top)
-        
-        section.boundarySupplementaryItems = [header]
-        
-        return section
-    }
-    
-    private func createCagegoriesLayoutSection() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.4), heightDimension: .fractionalWidth(0.4)), subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
-        section.interGroupSpacing = 8.0
-        section.orthogonalScrollingBehavior = .continuous
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfCategory, alignment: .top)
-        
-        section.boundarySupplementaryItems = [header]
-        
-        return section
-    }
-    
-    private func createMomentsLayoutSection() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.25), heightDimension: .fractionalWidth(0.44)), subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
-        section.interGroupSpacing = 8.0
-        section.orthogonalScrollingBehavior = .continuous
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfMoments, alignment: .top)
-        
-        section.boundarySupplementaryItems = [header]
-        
-        return section
-    }
-    
-    private func createTrandingChannelsLayoutSection() -> NSCollectionLayoutSection {
-            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(140)), subitems: [item])
-            
-            let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 8.0, bottom: .zero, trailing: .zero)
-            section.interGroupSpacing = 8.0
-            section.orthogonalScrollingBehavior = .continuous
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfTranding, alignment: .top)
-            
-            section.boundarySupplementaryItems = [header]
-            
-            return section
-    }
-    
-    private func createFeedLayoutSection() -> NSCollectionLayoutSection {
-            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.5)), subitems: [item])
-            
-            let section = NSCollectionLayoutSection(group: group)
-            section.interGroupSpacing = 8.0
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfFeed, alignment: .top)
-        header.pinToVisibleBounds = true
-            section.boundarySupplementaryItems = [header]
-            
-            return section
-    }
     
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -134,7 +55,7 @@ extension ToffeeHomeViewController {
         
         let pagerViewNib = UINib(nibName: PagerCollectionViewCell.reuseIdentifier, bundle: nil)
         let channelNib = UINib(nibName: PopularTVChannelsCollectionViewCell.reuseIdentifier, bundle: nil)
-        let cateGoriesNib  = UINib(nibName: CategoriesCollectionViewCell.reuseIdentifier, bundle: nil)
+        let cateGoriesNib = UINib(nibName: CategoriesCollectionViewCell.reuseIdentifier, bundle: nil)
         let momentsNib = UINib(nibName: MomentsCollectionViewCell.reuseIdentifier, bundle: nil)
         let trandinNib = UINib(nibName: TrendingChannelCollectionViewCell.reuseIdentifier, bundle: nil)
         let feedNib = UINib(nibName: FeedCollectionViewCell.reuseIdentifier, bundle: nil)
@@ -151,17 +72,17 @@ extension ToffeeHomeViewController {
         let layout = UICollectionViewCompositionalLayout {sectionIndex,enviroment in
             switch sectionIndex {
             case 0:
-                return self.createCollectionLayoutSection()
+                return AppLayouts.shared.createCollectionLayoutSection()
             case 1:
-                return self.createChaneelLayoutSection()
+                return AppLayouts.shared.createChaneelLayoutSection()
             case 2:
-                return self.createCagegoriesLayoutSection()
+                return AppLayouts.shared.createCagegoriesLayoutSection()
             case 3:
-                return self.createMomentsLayoutSection()
+                return AppLayouts.shared.createMomentsLayoutSection()
             case 4:
-                return self.createTrandingChannelsLayoutSection()
+                return AppLayouts.shared.createTrandingChannelsLayoutSection()
             case 5:
-                return self.createFeedLayoutSection()
+                return AppLayouts.shared.createFeedLayoutSection()
             default:
                 return nil
             }

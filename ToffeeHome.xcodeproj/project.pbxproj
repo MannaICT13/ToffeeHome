@@ -36,6 +36,7 @@
 		297E9DA62A822ABA00D2491F /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DA42A822ABA00D2491F /* FeedCollectionViewCell.swift */; };
 		297E9DA72A822ABA00D2491F /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 297E9DA52A822ABA00D2491F /* FeedCollectionViewCell.xib */; };
 		297E9DA92A82451000D2491F /* UIView + Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DA82A82451000D2491F /* UIView + Additions.swift */; };
+		297E9DAC2A82498600D2491F /* AppLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DAB2A82498600D2491F /* AppLayouts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		297E9DA42A822ABA00D2491F /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		297E9DA52A822ABA00D2491F /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		297E9DA82A82451000D2491F /* UIView + Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Additions.swift"; sourceTree = "<group>"; };
+		297E9DAB2A82498600D2491F /* AppLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayouts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				293FC88E2A80B862009299B5 /* App */,
 				293FC8912A80BA23009299B5 /* ViewController */,
+				297E9DAA2A82496500D2491F /* Model */,
 				293FC8932A80C162009299B5 /* Views */,
 				292BD8392A80C9AD002498B7 /* Helpers */,
 				297E9DA12A82279100D2491F /* Extensions */,
@@ -198,6 +201,14 @@
 				297E9DA82A82451000D2491F /* UIView + Additions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		297E9DAA2A82496500D2491F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				297E9DAB2A82498600D2491F /* AppLayouts.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				293FC8962A80C27E009299B5 /* PagerCollectionViewCell.swift in Sources */,
 				292BD8422A80CACE002498B7 /* FSPagerCollectionView.swift in Sources */,
 				2920D0CB2A81F70B0090D375 /* CategoriesCollectionViewCell.swift in Sources */,
+				297E9DAC2A82498600D2491F /* AppLayouts.swift in Sources */,
 				292BD84F2A80FEBF002498B7 /* CustomHeaderView.swift in Sources */,
 				2920D0CF2A8212BA0090D375 /* MomentsCollectionViewCell.swift in Sources */,
 				292BD84B2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift in Sources */,
