@@ -14,6 +14,10 @@
 		292BD8442A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD8432A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift */; };
 		292BD8462A80CB01002498B7 /* FSPageViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD8452A80CB01002498B7 /* FSPageViewLayout.swift */; };
 		292BD8482A80CB09002498B7 /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD8472A80CB09002498B7 /* FSPageViewTransformer.swift */; };
+		292BD84B2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD8492A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift */; };
+		292BD84C2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 292BD84A2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib */; };
+		292BD84F2A80FEBF002498B7 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD84D2A80FEBF002498B7 /* CustomHeaderView.swift */; };
+		292BD8502A80FEBF002498B7 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 292BD84E2A80FEBF002498B7 /* CustomHeaderView.xib */; };
 		293FC87B2A80B83E009299B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87A2A80B83E009299B5 /* AppDelegate.swift */; };
 		293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87C2A80B83E009299B5 /* SceneDelegate.swift */; };
 		293FC87F2A80B83E009299B5 /* ToffeeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC87E2A80B83E009299B5 /* ToffeeHomeViewController.swift */; };
@@ -32,6 +36,10 @@
 		292BD8432A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		292BD8452A80CB01002498B7 /* FSPageViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewLayout.swift; sourceTree = "<group>"; };
 		292BD8472A80CB09002498B7 /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewTransformer.swift; sourceTree = "<group>"; };
+		292BD8492A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVChannelsCollectionViewCell.swift; sourceTree = "<group>"; };
+		292BD84A2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTVChannelsCollectionViewCell.xib; sourceTree = "<group>"; };
+		292BD84D2A80FEBF002498B7 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		292BD84E2A80FEBF002498B7 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
 		293FC8772A80B83E009299B5 /* ToffeeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToffeeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		293FC87A2A80B83E009299B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		293FC87C2A80B83E009299B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +154,10 @@
 			children = (
 				293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */,
 				293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */,
+				292BD8492A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift */,
+				292BD84A2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib */,
+				292BD84D2A80FEBF002498B7 /* CustomHeaderView.swift */,
+				292BD84E2A80FEBF002498B7 /* CustomHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +224,8 @@
 				293FC8872A80B83F009299B5 /* LaunchScreen.storyboard in Resources */,
 				293FC8842A80B83F009299B5 /* Assets.xcassets in Resources */,
 				293FC8972A80C27E009299B5 /* PagerCollectionViewCell.xib in Resources */,
+				292BD84C2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib in Resources */,
+				292BD8502A80FEBF002498B7 /* CustomHeaderView.xib in Resources */,
 				293FC8822A80B83E009299B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +245,8 @@
 				292BD8482A80CB09002498B7 /* FSPageViewTransformer.swift in Sources */,
 				293FC8962A80C27E009299B5 /* PagerCollectionViewCell.swift in Sources */,
 				292BD8422A80CACE002498B7 /* FSPagerCollectionView.swift in Sources */,
+				292BD84F2A80FEBF002498B7 /* CustomHeaderView.swift in Sources */,
+				292BD84B2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift in Sources */,
 				293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */,
 				292BD8442A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */,

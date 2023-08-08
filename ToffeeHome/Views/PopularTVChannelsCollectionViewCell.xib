@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PopularTVChannelsCollectionViewCell" reuseIdentifier="PopularTVChannelsCollectionViewCell" id="gTV-IL-0wX" customClass="PopularTVChannelsCollectionViewCell" customModule="ToffeeHome" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="95" height="85"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="95" height="85"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kER-Yt-1MX">
+                        <rect key="frame" x="0.0" y="0.0" width="95" height="85"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7" translatesAutoresizingMaskIntoConstraints="NO" id="HGS-Sg-YwO">
+                                <rect key="frame" x="0.0" y="0.0" width="95" height="85"/>
+                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j58-yK-mrD">
+                                <rect key="frame" x="0.0" y="0.0" width="95" height="85"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="channelTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="fwk-Xf-1QT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j58-yK-mrD" firstAttribute="top" secondItem="kER-Yt-1MX" secondAttribute="top" id="HrB-hZ-DTP"/>
+                            <constraint firstItem="HGS-Sg-YwO" firstAttribute="top" secondItem="kER-Yt-1MX" secondAttribute="top" id="N1A-ej-RfZ"/>
+                            <constraint firstItem="HGS-Sg-YwO" firstAttribute="leading" secondItem="kER-Yt-1MX" secondAttribute="leading" id="YJ2-6K-XmM"/>
+                            <constraint firstAttribute="bottom" secondItem="j58-yK-mrD" secondAttribute="bottom" id="bYe-Lt-tSv"/>
+                            <constraint firstAttribute="bottom" secondItem="HGS-Sg-YwO" secondAttribute="bottom" id="ccf-Dk-2bm"/>
+                            <constraint firstAttribute="trailing" secondItem="j58-yK-mrD" secondAttribute="trailing" id="gyV-Qo-45E"/>
+                            <constraint firstAttribute="trailing" secondItem="HGS-Sg-YwO" secondAttribute="trailing" id="tS1-hP-Tcq"/>
+                            <constraint firstItem="j58-yK-mrD" firstAttribute="leading" secondItem="kER-Yt-1MX" secondAttribute="leading" id="uUz-4C-5bq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="top" secondItem="kER-Yt-1MX" secondAttribute="top" id="F4d-g1-eWY"/>
+                <constraint firstItem="kER-Yt-1MX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GPH-lr-lge"/>
+                <constraint firstItem="kER-Yt-1MX" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" id="wio-eQ-UaW"/>
+                <constraint firstAttribute="trailing" secondItem="kER-Yt-1MX" secondAttribute="trailing" id="yaq-7i-oZa"/>
+            </constraints>
+            <size key="customSize" width="95" height="85"/>
+            <connections>
+                <outlet property="channelImageView" destination="HGS-Sg-YwO" id="qZo-1O-p9G"/>
+            </connections>
+            <point key="canvasLocation" x="101.5267175572519" y="32.04225352112676"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="7" width="720" height="450"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
