@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class ToffeeHomeViewController: UIViewController {
     enum Section {
         case pagerView
@@ -19,11 +21,13 @@ class ToffeeHomeViewController: UIViewController {
     
     private var collectionView: UICollectionView! = nil
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, DisplayableWrapper>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, DisplayableWrapper>
     
     private var dataSource: DataSource! = nil
     private var snapshot = Snapshot()
+    
+    private let viewModel = ToffeeHomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,12 +193,12 @@ extension ToffeeHomeViewController {
         
         var snapShot = Snapshot()
         snapShot.appendSections([.pagerView, .channels, .categories, .moments, .trendingChannels, .feed])
-        snapShot.appendItems([Item(title: "")], toSection: .pagerView)
-        snapShot.appendItems(channelsItems, toSection: .channels)
-        snapShot.appendItems(channelsItems, toSection: .categories)
-        snapShot.appendItems(channelsItems, toSection: .moments)
-        snapShot.appendItems(channelsItems, toSection: .trendingChannels)
-        snapShot.appendItems(channelsItems, toSection: .feed)
+        snapShot.appendItems([.pager(PagerItem(identifier: UUID()))], toSection: .pagerView)
+        snapShot.appendItems(viewModel.channelItems, toSection: .channels)
+        snapShot.appendItems(viewModel.categoryItems, toSection: .categories)
+        snapShot.appendItems(viewModel.momemtsItems, toSection: .moments)
+        snapShot.appendItems(viewModel.trendingItems, toSection: .trendingChannels)
+        snapShot.appendItems(viewModel.feedItems, toSection: .feed)
         dataSource.apply(snapShot, animatingDifferences: false)
     }
     
