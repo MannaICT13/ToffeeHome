@@ -11,12 +11,14 @@ class ToffeeHomeViewController: UIViewController {
     static let headerElementKind = "header-element-kind"
     static let headerElementKindOfCategory = "header-element-kind-of-category"
     static let headerElementKindOfMoments = "header-element-kind-of-moments"
+    static let headerElementKindOfTranding = "header-element-kind-of-tranding"
     
     enum Section {
         case pagerView
         case channels
         case categories
         case moments
+        case trendingChannels
     }
     
     struct Item: Hashable {
@@ -93,6 +95,21 @@ extension ToffeeHomeViewController {
         
         return section
     }
+    
+    private func createTrandingChannelsLayoutSection() -> NSCollectionLayoutSection {
+            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(140)), subitems: [item])
+            
+            let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 8.0, bottom: .zero, trailing: .zero)
+            section.interGroupSpacing = 8.0
+            section.orthogonalScrollingBehavior = .continuous
+            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfTranding, alignment: .top)
+            
+            section.boundarySupplementaryItems = [header]
+            
+            return section
+    }
 
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -104,11 +121,13 @@ extension ToffeeHomeViewController {
         let channelNib = UINib(nibName: PopularTVChannelsCollectionViewCell.reuseIdentifier, bundle: nil)
         let cateGoriesNib  = UINib(nibName: CategoriesCollectionViewCell.reuseIdentifier, bundle: nil)
         let momentsNib = UINib(nibName: MomentsCollectionViewCell.reuseIdentifier, bundle: nil)
+        let trandinNib = UINib(nibName: TrendingChannelCollectionViewCell.reuseIdentifier, bundle: nil)
         
         collectionView.register(pagerViewNib, forCellWithReuseIdentifier: PagerCollectionViewCell.reuseIdentifier)
         collectionView.register(channelNib, forCellWithReuseIdentifier: PopularTVChannelsCollectionViewCell.reuseIdentifier)
         collectionView.register(cateGoriesNib, forCellWithReuseIdentifier: CategoriesCollectionViewCell.reuseIdentifier)
         collectionView.register(momentsNib, forCellWithReuseIdentifier: MomentsCollectionViewCell.reuseIdentifier)
+        collectionView.register(trandinNib, forCellWithReuseIdentifier: TrendingChannelCollectionViewCell.reuseIdentifier)
     }
     
     private func configureCompositionalLayout(){
@@ -122,6 +141,8 @@ extension ToffeeHomeViewController {
                 return self.createCagegoriesLayoutSection()
             case 3:
                 return self.createMomentsLayoutSection()
+            case 4:
+                return self.createTrandingChannelsLayoutSection()
             default:
                 return nil
             }
@@ -167,6 +188,10 @@ extension ToffeeHomeViewController {
 
                 }
                 return cell
+                
+            case .trendingChannels:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingChannelCollectionViewCell.reuseIdentifier, for: indexPath)
+                return cell
             }
         })
         
@@ -193,6 +218,14 @@ extension ToffeeHomeViewController {
                 print("did Tapped See All....Category")
             }
         }
+        
+        let trendingSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKindOfTranding) { supplementaryView, elementKind, indexPath in
+            supplementaryView.title = "Trending Channels"
+            supplementaryView.callback.didTappedSeeAll = {[weak self] in
+                guard self == self else { return }
+                print("did Tapped See All....Trending")
+            }
+        }
         dataSource.supplementaryViewProvider = {(view, kind, index) in
             switch kind {
             case ToffeeHomeViewController.headerElementKind:
@@ -201,17 +234,20 @@ extension ToffeeHomeViewController {
                 return self.collectionView.dequeueConfiguredReusableSupplementary(using: categorySupplementaryRegistration, for: index)
             case ToffeeHomeViewController.headerElementKindOfMoments:
                 return self.collectionView.dequeueConfiguredReusableSupplementary(using: momentsSupplementaryRegistration, for: index)
+            case ToffeeHomeViewController.headerElementKindOfTranding:
+                return self.collectionView.dequeueConfiguredReusableSupplementary(using: trendingSupplementaryRegistration, for: index)
             default:
                 return nil
             }
         }
         
         var snapShot = Snapshot()
-        snapShot.appendSections([.pagerView, .channels, .categories, .moments])
+        snapShot.appendSections([.pagerView, .channels, .categories, .moments, .trendingChannels])
         snapShot.appendItems([Item(title: "")], toSection: .pagerView)
         snapShot.appendItems(channelsItems, toSection: .channels)
         snapShot.appendItems(channelsItems, toSection: .categories)
         snapShot.appendItems(channelsItems, toSection: .moments)
+        snapShot.appendItems(channelsItems, toSection: .trendingChannels)
         dataSource.apply(snapShot, animatingDifferences: false)
     }
     

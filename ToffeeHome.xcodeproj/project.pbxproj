@@ -11,6 +11,8 @@
 		2920D0CC2A81F70B0090D375 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */; };
 		2920D0CF2A8212BA0090D375 /* MomentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920D0CD2A8212BA0090D375 /* MomentsCollectionViewCell.swift */; };
 		2920D0D02A8212BA0090D375 /* MomentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */; };
+		2920D0D32A8218C80090D375 /* TrendingChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */; };
+		2920D0D42A8218C80090D375 /* TrendingChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */; };
 		292BD83C2A80CA56002498B7 /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83B2A80CA56002498B7 /* FSPagerView.swift */; };
 		292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */; };
 		292BD8402A80CABF002498B7 /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83F2A80CABE002498B7 /* FSPageControl.swift */; };
@@ -30,6 +32,7 @@
 		293FC8872A80B83F009299B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8852A80B83F009299B5 /* LaunchScreen.storyboard */; };
 		293FC8962A80C27E009299B5 /* PagerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */; };
 		293FC8972A80C27E009299B5 /* PagerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */; };
+		297E9DA32A8227BF00D2491F /* UIButton + Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DA22A8227BF00D2491F /* UIButton + Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,8 @@
 		2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		2920D0CD2A8212BA0090D375 /* MomentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MomentsCollectionViewCell.xib; sourceTree = "<group>"; };
+		2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+		2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingChannelCollectionViewCell.xib; sourceTree = "<group>"; };
 		292BD83B2A80CA56002498B7 /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
 		292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewCell.swift; sourceTree = "<group>"; };
 		292BD83F2A80CABE002498B7 /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 		293FC8882A80B83F009299B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerCollectionViewCell.swift; sourceTree = "<group>"; };
 		293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagerCollectionViewCell.xib; sourceTree = "<group>"; };
+		297E9DA22A8227BF00D2491F /* UIButton + Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 				293FC8912A80BA23009299B5 /* ViewController */,
 				293FC8932A80C162009299B5 /* Views */,
 				292BD8392A80C9AD002498B7 /* Helpers */,
+				297E9DA12A82279100D2491F /* Extensions */,
 				293FC88F2A80B871009299B5 /* Storybaord */,
 				293FC8902A80B892009299B5 /* SupportsFiles */,
 			);
@@ -170,8 +177,18 @@
 				2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */,
 				2920D0CD2A8212BA0090D375 /* MomentsCollectionViewCell.swift */,
 				2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */,
+				2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */,
+				2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		297E9DA12A82279100D2491F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				297E9DA22A8227BF00D2491F /* UIButton + Additions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2920D0D02A8212BA0090D375 /* MomentsCollectionViewCell.xib in Resources */,
+				2920D0D42A8218C80090D375 /* TrendingChannelCollectionViewCell.xib in Resources */,
 				293FC8872A80B83F009299B5 /* LaunchScreen.storyboard in Resources */,
 				293FC8842A80B83F009299B5 /* Assets.xcassets in Resources */,
 				293FC8972A80C27E009299B5 /* PagerCollectionViewCell.xib in Resources */,
@@ -264,6 +282,8 @@
 				2920D0CF2A8212BA0090D375 /* MomentsCollectionViewCell.swift in Sources */,
 				292BD84B2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift in Sources */,
 				293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */,
+				297E9DA32A8227BF00D2491F /* UIButton + Additions.swift in Sources */,
+				2920D0D32A8218C80090D375 /* TrendingChannelCollectionViewCell.swift in Sources */,
 				292BD8442A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */,
 			);
