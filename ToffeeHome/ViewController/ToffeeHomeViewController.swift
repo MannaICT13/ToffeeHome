@@ -9,6 +9,7 @@ import UIKit
 
 class ToffeeHomeViewController: UIViewController {
     static let headerElementKind = "header-element-kind"
+    static let headerElementKindOfCategory = "header-element-kind-of-category"
     
     enum Section {
         case pagerView
@@ -69,7 +70,7 @@ extension ToffeeHomeViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
         section.interGroupSpacing = 8.0
         section.orthogonalScrollingBehavior = .continuous
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKind, alignment: .top)
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfCategory, alignment: .top)
         
         section.boundarySupplementaryItems = [header]
         
@@ -143,12 +144,27 @@ extension ToffeeHomeViewController {
             supplementaryView.title = "Popular TV Channels"
             supplementaryView.callback.didTappedSeeAll = {[weak self] in
                 guard self == self else { return }
-                print("did Tapped See All....")
+                print("did Tapped See All....Channels")
+            }
+        }
+        
+        let categorySupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKindOfCategory) { supplementaryView, elementKind, indexPath in
+            supplementaryView.title = "Categories"
+            supplementaryView.callback.didTappedSeeAll = {[weak self] in
+                guard self == self else { return }
+                print("did Tapped See All....Category")
             }
         }
         
         dataSource.supplementaryViewProvider = {(view, kind, index) in
-            return self.collectionView.dequeueConfiguredReusableSupplementary(using: supplementaryRegistration, for: index)
+            switch kind {
+            case ToffeeHomeViewController.headerElementKind:
+                return self.collectionView.dequeueConfiguredReusableSupplementary(using: supplementaryRegistration, for: index)
+            case ToffeeHomeViewController.headerElementKindOfCategory:
+                return self.collectionView.dequeueConfiguredReusableSupplementary(using: categorySupplementaryRegistration, for: index)
+            default:
+                return nil
+            }
         }
         
         var snapShot = Snapshot()
