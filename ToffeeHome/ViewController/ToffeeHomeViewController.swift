@@ -17,11 +17,6 @@ class ToffeeHomeViewController: UIViewController {
         case feed
     }
     
-    struct Item: Hashable {
-        let title: String?
-        private let identifier = UUID()
-    }
-    
     private var collectionView: UICollectionView! = nil
     
     typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
