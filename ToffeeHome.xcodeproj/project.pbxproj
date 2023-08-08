@@ -38,7 +38,6 @@
 		297E9DA92A82451000D2491F /* UIView + Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DA82A82451000D2491F /* UIView + Additions.swift */; };
 		297E9DAC2A82498600D2491F /* AppLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DAB2A82498600D2491F /* AppLayouts.swift */; };
 		297E9DAE2A824E3A00D2491F /* SupplementraryHeaderRegistrationKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DAD2A824E3A00D2491F /* SupplementraryHeaderRegistrationKind.swift */; };
-		297E9DB32A82503A00D2491F /* ToffeeHomeViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DB22A82503A00D2491F /* ToffeeHomeViewControllerViewModel.swift */; };
 		297E9DB52A82509700D2491F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DB42A82509700D2491F /* Home.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 		297E9DA82A82451000D2491F /* UIView + Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Additions.swift"; sourceTree = "<group>"; };
 		297E9DAB2A82498600D2491F /* AppLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayouts.swift; sourceTree = "<group>"; };
 		297E9DAD2A824E3A00D2491F /* SupplementraryHeaderRegistrationKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementraryHeaderRegistrationKind.swift; sourceTree = "<group>"; };
-		297E9DB22A82503A00D2491F /* ToffeeHomeViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToffeeHomeViewControllerViewModel.swift; sourceTree = "<group>"; };
 		297E9DB42A82509700D2491F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +132,6 @@
 			children = (
 				293FC88E2A80B862009299B5 /* App */,
 				297E9DAA2A82496500D2491F /* Model */,
-				297E9DB12A82500500D2491F /* ViewModel */,
 				293FC8932A80C162009299B5 /* Views */,
 				293FC8912A80BA23009299B5 /* ViewController */,
 				292BD8392A80C9AD002498B7 /* Helpers */,
@@ -236,14 +233,6 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
-		297E9DB12A82500500D2491F /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				297E9DB22A82503A00D2491F /* ToffeeHomeViewControllerViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				292BD8402A80CABF002498B7 /* FSPageControl.swift in Sources */,
-				297E9DB32A82503A00D2491F /* ToffeeHomeViewControllerViewModel.swift in Sources */,
 				293FC87F2A80B83E009299B5 /* ToffeeHomeViewController.swift in Sources */,
 				292BD8462A80CB01002498B7 /* FSPageViewLayout.swift in Sources */,
 				297E9DAE2A824E3A00D2491F /* SupplementraryHeaderRegistrationKind.swift in Sources */,
