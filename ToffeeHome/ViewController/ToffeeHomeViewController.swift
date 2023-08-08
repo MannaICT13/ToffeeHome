@@ -10,11 +10,13 @@ import UIKit
 class ToffeeHomeViewController: UIViewController {
     static let headerElementKind = "header-element-kind"
     static let headerElementKindOfCategory = "header-element-kind-of-category"
+    static let headerElementKindOfMoments = "header-element-kind-of-moments"
     
     enum Section {
         case pagerView
         case channels
         case categories
+        case moments
     }
     
     struct Item: Hashable {
@@ -76,6 +78,21 @@ extension ToffeeHomeViewController {
         
         return section
     }
+    
+    private func createMomentsLayoutSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.25), heightDimension: .fractionalWidth(0.44)), subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
+        section.interGroupSpacing = 8.0
+        section.orthogonalScrollingBehavior = .continuous
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKindOfMoments, alignment: .top)
+        
+        section.boundarySupplementaryItems = [header]
+        
+        return section
+    }
 
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -86,10 +103,12 @@ extension ToffeeHomeViewController {
         let pagerViewNib = UINib(nibName: PagerCollectionViewCell.reuseIdentifier, bundle: nil)
         let channelNib = UINib(nibName: PopularTVChannelsCollectionViewCell.reuseIdentifier, bundle: nil)
         let cateGoriesNib  = UINib(nibName: CategoriesCollectionViewCell.reuseIdentifier, bundle: nil)
+        let momentsNib = UINib(nibName: MomentsCollectionViewCell.reuseIdentifier, bundle: nil)
         
         collectionView.register(pagerViewNib, forCellWithReuseIdentifier: PagerCollectionViewCell.reuseIdentifier)
         collectionView.register(channelNib, forCellWithReuseIdentifier: PopularTVChannelsCollectionViewCell.reuseIdentifier)
         collectionView.register(cateGoriesNib, forCellWithReuseIdentifier: CategoriesCollectionViewCell.reuseIdentifier)
+        collectionView.register(momentsNib, forCellWithReuseIdentifier: MomentsCollectionViewCell.reuseIdentifier)
     }
     
     private func configureCompositionalLayout(){
@@ -101,6 +120,8 @@ extension ToffeeHomeViewController {
                 return self.createChaneelLayoutSection()
             case 2:
                 return self.createCagegoriesLayoutSection()
+            case 3:
+                return self.createMomentsLayoutSection()
             default:
                 return nil
             }
@@ -137,6 +158,15 @@ extension ToffeeHomeViewController {
                     print("Bottom Category Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
                 }
                 return cell
+                
+            case .moments:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MomentsCollectionViewCell.reuseIdentifier, for: indexPath) as! MomentsCollectionViewCell
+                cell.callback.didTappedMoment = {[weak self] in
+                    guard self == self else { return }
+                    print("Moments Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
+
+                }
+                return cell
             }
         })
         
@@ -155,23 +185,33 @@ extension ToffeeHomeViewController {
                 print("did Tapped See All....Category")
             }
         }
-        
+        let momentsSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKindOfMoments) { supplementaryView, elementKind, indexPath in
+            supplementaryView.title = "Moments"
+            supplementaryView.isRightbuttonHidden = true
+            supplementaryView.callback.didTappedSeeAll = {[weak self] in
+                guard self == self else { return }
+                print("did Tapped See All....Category")
+            }
+        }
         dataSource.supplementaryViewProvider = {(view, kind, index) in
             switch kind {
             case ToffeeHomeViewController.headerElementKind:
                 return self.collectionView.dequeueConfiguredReusableSupplementary(using: supplementaryRegistration, for: index)
             case ToffeeHomeViewController.headerElementKindOfCategory:
                 return self.collectionView.dequeueConfiguredReusableSupplementary(using: categorySupplementaryRegistration, for: index)
+            case ToffeeHomeViewController.headerElementKindOfMoments:
+                return self.collectionView.dequeueConfiguredReusableSupplementary(using: momentsSupplementaryRegistration, for: index)
             default:
                 return nil
             }
         }
         
         var snapShot = Snapshot()
-        snapShot.appendSections([.pagerView, .channels, .categories])
+        snapShot.appendSections([.pagerView, .channels, .categories, .moments])
         snapShot.appendItems([Item(title: "")], toSection: .pagerView)
         snapShot.appendItems(channelsItems, toSection: .channels)
         snapShot.appendItems(channelsItems, toSection: .categories)
+        snapShot.appendItems(channelsItems, toSection: .moments)
         dataSource.apply(snapShot, animatingDifferences: false)
     }
     

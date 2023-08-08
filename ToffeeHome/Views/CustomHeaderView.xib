@@ -52,6 +52,7 @@
             </constraints>
             <connections>
                 <outlet property="headerTitle" destination="HkR-uc-v9f" id="hL1-oo-LQP"/>
+                <outlet property="rightButtonOutlet" destination="Wp0-bv-PHA" id="JEm-ig-dc4"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="28.87323943661972"/>
         </collectionReusableView>
