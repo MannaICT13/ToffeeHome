@@ -178,20 +178,8 @@
 		293FC8932A80C162009299B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */,
-				293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */,
-				292BD8492A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift */,
-				292BD84A2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib */,
-				292BD84D2A80FEBF002498B7 /* CustomHeaderView.swift */,
-				292BD84E2A80FEBF002498B7 /* CustomHeaderView.xib */,
-				2920D0C92A81F70B0090D375 /* CategoriesCollectionViewCell.swift */,
-				2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */,
-				2920D0CD2A8212BA0090D375 /* MomentsCollectionViewCell.swift */,
-				2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */,
-				2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */,
-				2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */,
-				297E9DA42A822ABA00D2491F /* FeedCollectionViewCell.swift */,
-				297E9DA52A822ABA00D2491F /* FeedCollectionViewCell.xib */,
+				297E9DB02A824F7900D2491F /* CollectionViewCell */,
+				297E9DAF2A824F5600D2491F /* Header */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +200,34 @@
 				297E9DAD2A824E3A00D2491F /* SupplementraryHeaderRegistrationKind.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		297E9DAF2A824F5600D2491F /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				292BD84D2A80FEBF002498B7 /* CustomHeaderView.swift */,
+				292BD84E2A80FEBF002498B7 /* CustomHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		297E9DB02A824F7900D2491F /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				293FC8942A80C27E009299B5 /* PagerCollectionViewCell.swift */,
+				293FC8952A80C27E009299B5 /* PagerCollectionViewCell.xib */,
+				292BD8492A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift */,
+				292BD84A2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib */,
+				2920D0C92A81F70B0090D375 /* CategoriesCollectionViewCell.swift */,
+				2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */,
+				2920D0CD2A8212BA0090D375 /* MomentsCollectionViewCell.swift */,
+				2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */,
+				2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */,
+				2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */,
+				297E9DA42A822ABA00D2491F /* FeedCollectionViewCell.swift */,
+				297E9DA52A822ABA00D2491F /* FeedCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

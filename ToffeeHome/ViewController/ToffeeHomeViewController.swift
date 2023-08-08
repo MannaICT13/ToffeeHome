@@ -8,12 +8,6 @@
 import UIKit
 
 class ToffeeHomeViewController: UIViewController {
-//    static let headerElementKind = "header-element-kind"
-//    static let headerElementKindOfCategory = "header-element-kind-of-category"
-//    static let headerElementKindOfMoments = "header-element-kind-of-moments"
-//    static let headerElementKindOfTranding = "header-element-kind-of-tranding"
-//    static let headerElementKindOfFeed = "header-element-kind-of-feed"
-//
     enum Section {
         case pagerView
         case channels
