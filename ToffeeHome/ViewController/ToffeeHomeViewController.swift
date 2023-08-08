@@ -81,7 +81,7 @@ extension ToffeeHomeViewController {
             case 1:
                 return self.createChaneelLayoutSection()
             default:
-                return self.createCollectionLayoutSection()
+                return nil
             }
         }
         collectionView.setCollectionViewLayout(layout, animated: false)
