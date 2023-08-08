@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2920D0CB2A81F70B0090D375 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920D0C92A81F70B0090D375 /* CategoriesCollectionViewCell.swift */; };
+		2920D0CC2A81F70B0090D375 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */; };
 		292BD83C2A80CA56002498B7 /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83B2A80CA56002498B7 /* FSPagerView.swift */; };
 		292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */; };
 		292BD8402A80CABF002498B7 /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83F2A80CABE002498B7 /* FSPageControl.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2920D0C92A81F70B0090D375 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		292BD83B2A80CA56002498B7 /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
 		292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewCell.swift; sourceTree = "<group>"; };
 		292BD83F2A80CABE002498B7 /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				292BD84A2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib */,
 				292BD84D2A80FEBF002498B7 /* CustomHeaderView.swift */,
 				292BD84E2A80FEBF002498B7 /* CustomHeaderView.xib */,
+				2920D0C92A81F70B0090D375 /* CategoriesCollectionViewCell.swift */,
+				2920D0CA2A81F70B0090D375 /* CategoriesCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 				293FC8842A80B83F009299B5 /* Assets.xcassets in Resources */,
 				293FC8972A80C27E009299B5 /* PagerCollectionViewCell.xib in Resources */,
 				292BD84C2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.xib in Resources */,
+				2920D0CC2A81F70B0090D375 /* CategoriesCollectionViewCell.xib in Resources */,
 				292BD8502A80FEBF002498B7 /* CustomHeaderView.xib in Resources */,
 				293FC8822A80B83E009299B5 /* Main.storyboard in Resources */,
 			);
@@ -245,6 +252,7 @@
 				292BD8482A80CB09002498B7 /* FSPageViewTransformer.swift in Sources */,
 				293FC8962A80C27E009299B5 /* PagerCollectionViewCell.swift in Sources */,
 				292BD8422A80CACE002498B7 /* FSPagerCollectionView.swift in Sources */,
+				2920D0CB2A81F70B0090D375 /* CategoriesCollectionViewCell.swift in Sources */,
 				292BD84F2A80FEBF002498B7 /* CustomHeaderView.swift in Sources */,
 				292BD84B2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift in Sources */,
 				293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */,

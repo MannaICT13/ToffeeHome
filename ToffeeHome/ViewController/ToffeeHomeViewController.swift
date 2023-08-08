@@ -13,6 +13,7 @@ class ToffeeHomeViewController: UIViewController {
     enum Section {
         case pagerView
         case channels
+        case categories
     }
     
     struct Item: Hashable {
@@ -59,6 +60,21 @@ extension ToffeeHomeViewController {
         
         return section
     }
+    
+    private func createCagegoriesLayoutSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.4), heightDimension: .fractionalWidth(0.4)), subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8.0, leading: 8.0, bottom: 8.0, trailing: 8.0)
+        section.interGroupSpacing = 8.0
+        section.orthogonalScrollingBehavior = .continuous
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44)), elementKind: ToffeeHomeViewController.headerElementKind, alignment: .top)
+        
+        section.boundarySupplementaryItems = [header]
+        
+        return section
+    }
 
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -68,18 +84,22 @@ extension ToffeeHomeViewController {
         
         let pagerViewNib = UINib(nibName: PagerCollectionViewCell.reuseIdentifier, bundle: nil)
         let channelNib = UINib(nibName: PopularTVChannelsCollectionViewCell.reuseIdentifier, bundle: nil)
+        let cateGoriesNib  = UINib(nibName: CategoriesCollectionViewCell.reuseIdentifier, bundle: nil)
         
         collectionView.register(pagerViewNib, forCellWithReuseIdentifier: PagerCollectionViewCell.reuseIdentifier)
         collectionView.register(channelNib, forCellWithReuseIdentifier: PopularTVChannelsCollectionViewCell.reuseIdentifier)
+        collectionView.register(cateGoriesNib, forCellWithReuseIdentifier: CategoriesCollectionViewCell.reuseIdentifier)
     }
     
     private func configureCompositionalLayout(){
         let layout = UICollectionViewCompositionalLayout {sectionIndex,enviroment in
             switch sectionIndex {
-            case  0:
+            case 0:
                 return self.createCollectionLayoutSection()
             case 1:
                 return self.createChaneelLayoutSection()
+            case 2:
+                return self.createCagegoriesLayoutSection()
             default:
                 return nil
             }
@@ -103,6 +123,19 @@ extension ToffeeHomeViewController {
                     print("Channel Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
                 }
                 return cell
+                
+            case .categories:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCollectionViewCell.reuseIdentifier, for: indexPath) as! CategoriesCollectionViewCell
+                cell.callback.didTappedTopCategory = { [weak self] in
+                    guard self == self else { return }
+                    print("Top Category Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
+
+                }
+                cell.callback.didTappedBottomCategory = {[weak self] in
+                    guard self == self else { return }
+                    print("Bottom Category Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
+                }
+                return cell
             }
         })
         
@@ -119,9 +152,10 @@ extension ToffeeHomeViewController {
         }
         
         var snapShot = Snapshot()
-        snapShot.appendSections([.pagerView, .channels])
+        snapShot.appendSections([.pagerView, .channels, .categories])
         snapShot.appendItems([Item(title: "")], toSection: .pagerView)
         snapShot.appendItems(channelsItems, toSection: .channels)
+        snapShot.appendItems(channelsItems, toSection: .categories)
         dataSource.apply(snapShot, animatingDifferences: false)
     }
     
