@@ -7,9 +7,17 @@
 
 import UIKit
 
+extension CustomHeaderView {
+    class Callback {
+        var didTappedSeeAll: () -> Void = { }
+    }
+}
+
 class CustomHeaderView: UICollectionReusableView {
-    static let reuseableIdentifier = "CustomHeaderView"
     @IBOutlet private weak var headerTitle: UILabel!
+    
+    static let reuseableIdentifier = "CustomHeaderView"
+    let callback = Callback()
     
     var title: String? {
         didSet {
@@ -17,12 +25,12 @@ class CustomHeaderView: UICollectionReusableView {
             headerTitle.text = title
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     @IBAction func tappedSeeAll(_ sender: UIButton) {
-        
+        callback.didTappedSeeAll()
     }
 }

@@ -99,6 +99,7 @@ extension ToffeeHomeViewController {
             case .channels:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularTVChannelsCollectionViewCell.reuseIdentifier, for: indexPath) as! PopularTVChannelsCollectionViewCell
                 cell.callback.didTappedChannel = {[weak self] in
+                    guard self == self else { return }
                     print("Channel Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
                 }
                 return cell
@@ -107,6 +108,10 @@ extension ToffeeHomeViewController {
         
         let supplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: ToffeeHomeViewController.headerElementKind) { supplementaryView, elementKind, indexPath in
             supplementaryView.title = "Popular TV Channels"
+            supplementaryView.callback.didTappedSeeAll = {[weak self] in
+                guard self == self else { return }
+                print("did Tapped See All....")
+            }
         }
         
         dataSource.supplementaryViewProvider = {(view, kind, index) in
@@ -116,13 +121,13 @@ extension ToffeeHomeViewController {
         var snapShot = Snapshot()
         snapShot.appendSections([.pagerView, .channels])
         snapShot.appendItems([Item(title: "")], toSection: .pagerView)
-        snapShot.appendItems(channels, toSection: .channels)
+        snapShot.appendItems(channelsItems, toSection: .channels)
         dataSource.apply(snapShot, animatingDifferences: false)
     }
     
-    var channels: [Item] {
+    var channelsItems: [Item] {
         var channelItem = [Item]()
-        for _ in 0..<20 {
+        for _ in 0..<30 {
             channelItem.append(Item(title: ""))
         }
         return channelItem
