@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct Item: Hashable {
-    let title: String?
-    private let identifier = UUID()
-}
-
 protocol DisplayableItem: Hashable {
     var identifier: UUID { get }
 }

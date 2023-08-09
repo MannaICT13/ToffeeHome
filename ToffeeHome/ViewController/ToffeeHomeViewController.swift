@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class ToffeeHomeViewController: UIViewController {
     enum Section {
         case pagerView
