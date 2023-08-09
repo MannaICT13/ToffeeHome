@@ -7,12 +7,19 @@
 
 import UIKit
 
+extension TrendingChannelCollectionViewCell {
+    class Callback {
+        var didTappedFollow: () -> Void = { }
+    }
+}
+
 class TrendingChannelCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var imageContainerView: UIView!
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var followButtonOutlet: UIButton!
     
     static let reuseIdentifier = "TrendingChannelCollectionViewCell"
+    let callback = Callback()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +28,7 @@ class TrendingChannelCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction private func followButtonAction(_ sender: UIButton) {
-        
+        callback.didTappedFollow()
     }
     
 }

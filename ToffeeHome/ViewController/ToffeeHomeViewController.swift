@@ -123,7 +123,11 @@ extension ToffeeHomeViewController {
                 return cell
                 
             case .trendingChannels:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingChannelCollectionViewCell.reuseIdentifier, for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingChannelCollectionViewCell.reuseIdentifier, for: indexPath) as! TrendingChannelCollectionViewCell
+                cell.callback.didTappedFollow = {[weak self] in
+                    guard self == self else { return }
+                    print("Trending Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
+                }
                 return cell
                 
             case .feed:
@@ -200,13 +204,5 @@ extension ToffeeHomeViewController {
         snapShot.appendItems(viewModel.trendingItems, toSection: .trendingChannels)
         snapShot.appendItems(viewModel.feedItems, toSection: .feed)
         dataSource.apply(snapShot, animatingDifferences: false)
-    }
-    
-    var channelsItems: [Item] {
-        var channelItem = [Item]()
-        for _ in 0..<30 {
-            channelItem.append(Item(title: ""))
-        }
-        return channelItem
     }
 }

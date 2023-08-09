@@ -12,10 +12,8 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     static let reuseIdentifier = "FeedCollectionViewCell"
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         bottomView.roundBottomCorners(radius: 12.0)
     }
-
 }
