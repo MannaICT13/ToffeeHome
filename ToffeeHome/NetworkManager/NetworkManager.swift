@@ -22,9 +22,9 @@ class NetworkManager {
     private let baseURL = "https://api.tvmaze.com/seasons/1/"
     
     
-    func getData<T: Decodable>(endpoint: Endpoint, id: Int? = nil, type: T.Type) -> Future<[T], Error> {
+    func getData<T: Decodable>(endpoint: Endpoint, type: T.Type) -> Future<[T], Error> {
         return Future<[T], Error> { [weak self] promise in
-            guard let self = self, let url = URL(string: self.baseURL.appending(endpoint.rawValue).appending(id == nil ? "" : "/\(id ?? 0)")) else {
+            guard let self = self, let url = URL(string: self.baseURL.appending(endpoint.rawValue)) else {
                 return promise(.failure(NetworkError.invalidURL))
             }
             print("URL is \(url.absoluteString)")
