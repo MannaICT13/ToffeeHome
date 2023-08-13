@@ -47,7 +47,7 @@ enum DisplayableWrapper: Hashable {
     case gategory(CategoriesItem)
     case moments(MomentsItem)
     case trendeing(TrandingItem)
-    case feed(FeedItem)
+    case feed(Episode)
     
     func hash(into hasher: inout Hasher) {
         switch self {
