@@ -41,6 +41,7 @@
 		297E9DB52A82509700D2491F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DB42A82509700D2491F /* Home.swift */; };
 		297E9DB82A82649100D2491F /* ToffeeHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DB72A82649100D2491F /* ToffeeHomeViewModel.swift */; };
 		29C882E32A88B350001A075E /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C882E22A88B350001A075E /* Episodes.swift */; };
+		29C882E62A88B4D1001A075E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C882E52A88B4D1001A075E /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		297E9DB42A82509700D2491F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		297E9DB72A82649100D2491F /* ToffeeHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToffeeHomeViewModel.swift; sourceTree = "<group>"; };
 		29C882E22A88B350001A075E /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
+		29C882E52A88B4D1001A075E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				297E9DA12A82279100D2491F /* Extensions */,
 				293FC88F2A80B871009299B5 /* Storybaord */,
 				293FC8902A80B892009299B5 /* SupportsFiles */,
+				29C882E72A88B538001A075E /* NetworkManager */,
 			);
 			path = ToffeeHome;
 			sourceTree = "<group>";
@@ -247,6 +250,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		29C882E72A88B538001A075E /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				29C882E52A88B4D1001A075E /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -348,6 +359,7 @@
 				297E9DA62A822ABA00D2491F /* FeedCollectionViewCell.swift in Sources */,
 				2920D0D32A8218C80090D375 /* TrendingChannelCollectionViewCell.swift in Sources */,
 				29C882E32A88B350001A075E /* Episodes.swift in Sources */,
+				29C882E62A88B4D1001A075E /* NetworkManager.swift in Sources */,
 				292BD8442A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */,
 			);
