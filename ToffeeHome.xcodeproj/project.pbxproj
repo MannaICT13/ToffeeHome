@@ -40,6 +40,7 @@
 		297E9DAE2A824E3A00D2491F /* SupplementraryHeaderRegistrationKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DAD2A824E3A00D2491F /* SupplementraryHeaderRegistrationKind.swift */; };
 		297E9DB52A82509700D2491F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DB42A82509700D2491F /* Home.swift */; };
 		297E9DB82A82649100D2491F /* ToffeeHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DB72A82649100D2491F /* ToffeeHomeViewModel.swift */; };
+		29C882E32A88B350001A075E /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C882E22A88B350001A075E /* Episodes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		297E9DAD2A824E3A00D2491F /* SupplementraryHeaderRegistrationKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementraryHeaderRegistrationKind.swift; sourceTree = "<group>"; };
 		297E9DB42A82509700D2491F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		297E9DB72A82649100D2491F /* ToffeeHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToffeeHomeViewModel.swift; sourceTree = "<group>"; };
+		29C882E22A88B350001A075E /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				297E9DAB2A82498600D2491F /* AppLayouts.swift */,
 				297E9DAD2A824E3A00D2491F /* SupplementraryHeaderRegistrationKind.swift */,
 				297E9DB42A82509700D2491F /* Home.swift */,
+				29C882E22A88B350001A075E /* Episodes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				297E9DA92A82451000D2491F /* UIView + Additions.swift in Sources */,
 				297E9DA62A822ABA00D2491F /* FeedCollectionViewCell.swift in Sources */,
 				2920D0D32A8218C80090D375 /* TrendingChannelCollectionViewCell.swift in Sources */,
+				29C882E32A88B350001A075E /* Episodes.swift in Sources */,
 				292BD8442A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */,
 			);

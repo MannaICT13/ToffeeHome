@@ -131,6 +131,9 @@
             <size key="customSize" width="400" height="553"/>
             <connections>
                 <outlet property="bottomView" destination="m1u-5y-76c" id="uLx-Er-iPs"/>
+                <outlet property="feedImageView" destination="KV1-Lx-fVY" id="hPI-Wb-mf6"/>
+                <outlet property="runtimeLabel" destination="eXs-L6-qZ4" id="IIc-tA-vl0"/>
+                <outlet property="sessionDetailLabel" destination="RAP-uh-B42" id="4kL-4v-IvQ"/>
             </connections>
             <point key="canvasLocation" x="114.50381679389312" y="86.971830985915503"/>
         </collectionViewCell>
