@@ -13,7 +13,7 @@ struct Episode: Codable, Hashable {
     let name: String?
     let season, number: Int?
     let airdate: String?
-    let runtime: Int?
+    let runtime: Double?
     let rating: Rating?
     let image: Image?
     let summary: String?
