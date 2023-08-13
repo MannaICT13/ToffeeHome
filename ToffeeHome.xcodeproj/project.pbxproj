@@ -42,6 +42,7 @@
 		297E9DB82A82649100D2491F /* ToffeeHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DB72A82649100D2491F /* ToffeeHomeViewModel.swift */; };
 		29C882E32A88B350001A075E /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C882E22A88B350001A075E /* Episodes.swift */; };
 		29C882E62A88B4D1001A075E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C882E52A88B4D1001A075E /* NetworkManager.swift */; };
+		29C882E92A88DF0E001A075E /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C882E82A88DF0E001A075E /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		297E9DB72A82649100D2491F /* ToffeeHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToffeeHomeViewModel.swift; sourceTree = "<group>"; };
 		29C882E22A88B350001A075E /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		29C882E52A88B4D1001A075E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		29C882E82A88DF0E001A075E /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			children = (
 				297E9DA22A8227BF00D2491F /* UIButton + Additions.swift */,
 				297E9DA82A82451000D2491F /* UIView + Additions.swift */,
+				29C882E82A88DF0E001A075E /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				297E9DB52A82509700D2491F /* Home.swift in Sources */,
 				2920D0CF2A8212BA0090D375 /* MomentsCollectionViewCell.swift in Sources */,
 				292BD84B2A80E0B6002498B7 /* PopularTVChannelsCollectionViewCell.swift in Sources */,
+				29C882E92A88DF0E001A075E /* UIImageView.swift in Sources */,
 				293FC87D2A80B83E009299B5 /* SceneDelegate.swift in Sources */,
 				297E9DA32A8227BF00D2491F /* UIButton + Additions.swift in Sources */,
 				297E9DA92A82451000D2491F /* UIView + Additions.swift in Sources */,

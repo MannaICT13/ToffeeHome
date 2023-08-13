@@ -46,6 +46,15 @@ class ToffeeHomeViewModel {
         return feedDisplaywWrapper
     }
     
+    func setFeedData(for index: Int)-> FeedCollectionViewCellViewModel? {
+        let episode = episodes[index]
+        
+        return  FeedCollectionViewCellViewModel(feedImage: episode.image?.original ?? "",
+                                                runtime: episode.runtime ?? .zero,
+                                                episodeName: episode.name ?? "",
+                                                sesson: episode.season ?? .zero)
+    }
+    
     var channelItems: [DisplayableWrapper] {
         return [
             .channel(ChannelItem(identifier: UUID(), title: "")),

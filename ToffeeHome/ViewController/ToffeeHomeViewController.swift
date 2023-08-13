@@ -150,6 +150,7 @@ extension ToffeeHomeViewController {
                 
             case .feed:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
+                cell.viewModel = self.viewModel.setFeedData(for: indexPath.row)
                 return cell
             }
         })
