@@ -6,8 +6,45 @@
 //
 
 import Foundation
+import Combine
 
 class ToffeeHomeViewModel {
+    var didSuccess: ([Episode]) -> Void = { _ in }
+    var didFailure: (String) -> Void  = { _ in }
+    
+    private var cancellables = Set<AnyCancellable>()
+    @Published var episodes = [Episode]()
+    
+    func getEpisodesData() {
+        NetworkManager.shared.getData(endpoint: .episodes, type: Episode.self)
+                .sink { completion in
+                    switch completion {
+                    case .failure(let error):
+                        print("error is \(error.localizedDescription)")
+                        self.didFailure(error.localizedDescription)
+                    case .finished:
+                        print("Finished")
+                    }
+                } receiveValue: { [weak self] episodes in
+                    self?.episodes = episodes
+                    self?.didSuccess(self?.episodes ?? [])
+                }
+                .store(in: &cancellables)
+    }
+    
+    var feedItems: [DisplayableWrapper] {
+        var feedDisplaywWrapper = [DisplayableWrapper]()
+        
+        for index in 0..<episodes.count {
+            if index >= 0 && index < episodes.count {
+                let episode = episodes[index]
+                feedDisplaywWrapper.append(.feed(episode))
+            } else {
+                print("Index out of range: \(index)")
+            }
+        }
+        return feedDisplaywWrapper
+    }
     
     var channelItems: [DisplayableWrapper] {
         return [
@@ -66,21 +103,6 @@ class ToffeeHomeViewModel {
             .trendeing(TrandingItem(identifier: UUID(), title: "")),
             .trendeing(TrandingItem(identifier: UUID(), title: "")),
             .trendeing(TrandingItem(identifier: UUID(), title: "")),
-        ]
-    }
-    
-    var feedItems: [DisplayableWrapper] {
-        return [
-            .feed(FeedItem(identifier: UUID(), title: "")),
-            .feed(FeedItem(identifier: UUID(), title: "")),
-            .feed(FeedItem(identifier: UUID(), title: "")),
-            .feed(FeedItem(identifier: UUID(), title: "")),
-            .feed(FeedItem(identifier: UUID(), title: "")),
-            .feed(FeedItem(identifier: UUID(), title: "")),
-            .feed(FeedItem(identifier: UUID(), title: "")),
-            .feed(FeedItem(identifier: UUID(), title: "")),
-            .feed(FeedItem(identifier: UUID(), title: "")),
-            .feed(FeedItem(identifier: UUID(), title: "")),
         ]
     }
 }

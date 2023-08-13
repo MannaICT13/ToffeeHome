@@ -30,9 +30,29 @@ class ToffeeHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        viewModel.getEpisodesData()
+        
+        viewModel.didFailure = {error in
+            print(error)
+        }
+        
+        viewModel.didSuccess = {[weak self] episodes in
+            print(episodes)
+            DispatchQueue.main.async {
+                self?.updateFeedSection()
+            }
+        }
+        
         setupCollectionView()
         configureCompositionalLayout()
         configurediffableDataSource()
+    }
+    
+    private func updateFeedSection() {
+        snapshot.deleteItems(snapshot.itemIdentifiers(inSection: .feed))
+        snapshot.appendItems(viewModel.feedItems, toSection: .feed)
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
@@ -129,7 +149,7 @@ extension ToffeeHomeViewController {
                 return cell
                 
             case .feed:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier, for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
                 return cell
             }
         })
@@ -192,15 +212,12 @@ extension ToffeeHomeViewController {
                 return nil
             }
         }
-        
-        var snapShot = Snapshot()
-        snapShot.appendSections([.pagerView, .channels, .categories, .moments, .trendingChannels, .feed])
-        snapShot.appendItems([.pager(PagerItem(identifier: UUID()))], toSection: .pagerView)
-        snapShot.appendItems(viewModel.channelItems, toSection: .channels)
-        snapShot.appendItems(viewModel.categoryItems, toSection: .categories)
-        snapShot.appendItems(viewModel.momemtsItems, toSection: .moments)
-        snapShot.appendItems(viewModel.trendingItems, toSection: .trendingChannels)
-        snapShot.appendItems(viewModel.feedItems, toSection: .feed)
-        dataSource.apply(snapShot, animatingDifferences: false)
+        snapshot.appendSections([.pagerView, .channels, .categories, .moments, .trendingChannels, .feed])
+        snapshot.appendItems([.pager(PagerItem(identifier: UUID()))], toSection: .pagerView)
+        snapshot.appendItems(viewModel.channelItems, toSection: .channels)
+        snapshot.appendItems(viewModel.categoryItems, toSection: .categories)
+        snapshot.appendItems(viewModel.momemtsItems, toSection: .moments)
+        snapshot.appendItems(viewModel.trendingItems, toSection: .trendingChannels)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 }

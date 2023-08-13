@@ -11,7 +11,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var bottomView: UIView!
     @IBOutlet private weak var sessionDetailLabel: UILabel!
     @IBOutlet private weak var feedImageView: UIImageView!
-    @IBOutlet private weak var runtimeLabel: UILabel!
+    @IBOutlet weak var runtimeLabel: UILabel!
     
     static let reuseIdentifier = "FeedCollectionViewCell"
     
