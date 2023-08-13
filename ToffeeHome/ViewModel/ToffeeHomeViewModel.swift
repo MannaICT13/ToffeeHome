@@ -13,14 +13,13 @@ class ToffeeHomeViewModel {
     var didFailure: (String) -> Void  = { _ in }
     
     private var cancellables = Set<AnyCancellable>()
-    @Published var episodes = [Episode]()
+    private var episodes = [Episode]()
     
     func getEpisodesData() {
         NetworkManager.shared.getData(endpoint: .episodes, type: Episode.self)
                 .sink { completion in
                     switch completion {
                     case .failure(let error):
-                        print("error is \(error.localizedDescription)")
                         self.didFailure(error.localizedDescription)
                     case .finished:
                         print("Finished")
