@@ -16,7 +16,7 @@ class ToffeeHomeViewModel {
     private var episodes = [Episode]()
     
     func getEpisodesData() {
-        NetworkManager.shared.getData(endpoint: .episodes, type: Episode.self)
+        NetworkManager.shared.requestData(endpoint: .episodes, type: [Episode].self)
                 .sink { completion in
                     switch completion {
                     case .failure(let error):
