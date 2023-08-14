@@ -36,11 +36,6 @@ struct TrandingItem: DisplayableItem {
     var title: String?
 }
 
-struct FeedItem: DisplayableItem {
-    var identifier: UUID
-    var title: String?
-}
-
 enum DisplayableWrapper: Hashable {
     case pager(PagerItem)
     case channel(ChannelItem)
