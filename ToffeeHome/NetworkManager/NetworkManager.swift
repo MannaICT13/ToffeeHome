@@ -8,22 +8,14 @@
 import Foundation
 import Combine
 
-enum Endpoint: String {
-    case episodes
+protocol GenericAPIClient {
+    func requestData<T: Decodable>(endpoint: Endpoint, method: HTTPMethod, body: Data?, queryParams: [String: String]?, type: T.Type, decoder: JSONDecoder) -> Future<T, Error>
+    // MARK: - Implement func for upolading task & downloading task if needed
 }
 
-public enum HTTPMethod: String {
-    case get    = "GET"
-    case post   = "POST"
-    case put    = "PUT"
-    case patch  = "PATCH"
-    case delete = "DELETE"
-}
-
-class NetworkManager {
+class NetworkManager: GenericAPIClient {
     static let shared = NetworkManager()
     private var cancellables = Set<AnyCancellable>()
-    private let baseURL = "https://api.tvmaze.com/seasons/1/"
     
     func requestData<T: Decodable>(
         endpoint: Endpoint,
@@ -34,7 +26,7 @@ class NetworkManager {
         decoder: JSONDecoder = JSONDecoder()
     ) -> Future<T, Error> {
         return Future<T, Error> { [weak self] promise in
-            guard let self = self, var components = URLComponents(string: self.baseURL.appending(endpoint.rawValue)) else {
+            guard let self = self, var components = URLComponents(string: Constants.ProductionServer.baseURL.appending(endpoint.rawValue)) else {
                 return promise(.failure(NetworkError.invalidURL))
             }
             
@@ -91,24 +83,5 @@ class NetworkManager {
         }
     }
     private init() { }
-}
-
-enum NetworkError: Error {
-    case invalidURL
-    case responseError
-    case unknown
-}
-
-extension NetworkError: LocalizedError {
-    var errorDescription: String? {
-        switch self {
-        case .invalidURL:
-            return NSLocalizedString("Invalid URL", comment: "Invalid URL")
-        case .responseError:
-            return NSLocalizedString("Unexpected status code", comment: "Invalid response")
-        case .unknown:
-            return NSLocalizedString("Unknown error", comment: "Unknown error")
-        }
-    }
 }
 
