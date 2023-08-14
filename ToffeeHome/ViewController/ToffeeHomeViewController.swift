@@ -38,7 +38,6 @@ class ToffeeHomeViewController: UIViewController {
         }
         
         viewModel.didSuccess = {[weak self] episodes in
-            print(episodes)
             DispatchQueue.main.async {
                 self?.updateFeedSection()
             }
