@@ -14,24 +14,35 @@ class ToffeeHomeViewModel {
     
     private var cancellables = Set<AnyCancellable>()
     private var episodes = [Episode]()
-    
+    /*
+     func getEpisodesData() {
+         NetworkManager.shared.requestData(
+             endpoint: .episodes,
+             method: .get,
+             type: [Episode].self)
+                 .sink { completion in
+                     switch completion {
+                     case .failure(let error):
+                         self.didFailure(error.localizedDescription)
+                     case .finished:
+                         print("Finished")
+                     }
+                 } receiveValue: { [weak self] episodes in
+                     self?.episodes = episodes
+                     self?.didSuccess(self?.episodes ?? [])
+                 }
+                 .store(in: &cancellables)
+     }
+     */
+
+    // Here another way of fetching data
     func getEpisodesData() {
-        NetworkManager.shared.requestData(
-            endpoint: .episodes,
-            method: .get,
-            type: [Episode].self)
-                .sink { completion in
-                    switch completion {
-                    case .failure(let error):
-                        self.didFailure(error.localizedDescription)
-                    case .finished:
-                        print("Finished")
-                    }
-                } receiveValue: { [weak self] episodes in
-                    self?.episodes = episodes
-                    self?.didSuccess(self?.episodes ?? [])
-                }
-                .store(in: &cancellables)
+        HomeCombineNetworkService.shared.getPosts {[weak self] response in
+            self?.episodes = response ?? []
+            self?.didSuccess(self?.episodes ?? [])
+        } failure: {[weak self] error in
+            self?.didFailure(error)
+        }
     }
     
     var feedItems: [DisplayableWrapper] {

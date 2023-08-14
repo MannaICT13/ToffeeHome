@@ -37,6 +37,7 @@
 		2955CA4A2A8A39370088AB26 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA492A8A39370088AB26 /* NetworkError.swift */; };
 		2955CA4C2A8A39720088AB26 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA4B2A8A39720088AB26 /* Endpoints.swift */; };
 		2955CA4F2A8A39D70088AB26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA4E2A8A39D70088AB26 /* Constants.swift */; };
+		2955CA522A8A3CA30088AB26 /* CombineNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2955CA512A8A3CA30088AB26 /* CombineNetworkService.swift */; };
 		297E9DA32A8227BF00D2491F /* UIButton + Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DA22A8227BF00D2491F /* UIButton + Additions.swift */; };
 		297E9DA62A822ABA00D2491F /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E9DA42A822ABA00D2491F /* FeedCollectionViewCell.swift */; };
 		297E9DA72A822ABA00D2491F /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 297E9DA52A822ABA00D2491F /* FeedCollectionViewCell.xib */; };
@@ -83,6 +84,7 @@
 		2955CA492A8A39370088AB26 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		2955CA4B2A8A39720088AB26 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		2955CA4E2A8A39D70088AB26 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2955CA512A8A3CA30088AB26 /* CombineNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineNetworkService.swift; sourceTree = "<group>"; };
 		297E9DA22A8227BF00D2491F /* UIButton + Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Additions.swift"; sourceTree = "<group>"; };
 		297E9DA42A822ABA00D2491F /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		297E9DA52A822ABA00D2491F /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				293FC8902A80B892009299B5 /* SupportsFiles */,
 				2955CA4D2A8A39B00088AB26 /* Constants */,
 				29C882E72A88B538001A075E /* NetworkManager */,
+				2955CA502A8A3C790088AB26 /* CombineService */,
 			);
 			path = ToffeeHome;
 			sourceTree = "<group>";
@@ -214,6 +217,14 @@
 			);
 			name = Constants;
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2955CA502A8A3C790088AB26 /* CombineService */ = {
+			isa = PBXGroup;
+			children = (
+				2955CA512A8A3CA30088AB26 /* CombineNetworkService.swift */,
+			);
+			path = CombineService;
 			sourceTree = "<group>";
 		};
 		297E9DA12A82279100D2491F /* Extensions */ = {
@@ -378,6 +389,7 @@
 				297E9DB82A82649100D2491F /* ToffeeHomeViewModel.swift in Sources */,
 				292BD8422A80CACE002498B7 /* FSPagerCollectionView.swift in Sources */,
 				2920D0CB2A81F70B0090D375 /* CategoriesCollectionViewCell.swift in Sources */,
+				2955CA522A8A3CA30088AB26 /* CombineNetworkService.swift in Sources */,
 				297E9DAC2A82498600D2491F /* AppLayouts.swift in Sources */,
 				292BD84F2A80FEBF002498B7 /* CustomHeaderView.swift in Sources */,
 				297E9DB52A82509700D2491F /* Home.swift in Sources */,
