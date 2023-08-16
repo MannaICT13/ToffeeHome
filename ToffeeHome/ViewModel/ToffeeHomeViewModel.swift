@@ -77,9 +77,7 @@ class ToffeeHomeViewModel {
             .channel(ChannelItem(identifier: UUID(), title: "")),
             .channel(ChannelItem(identifier: UUID(), title: "")),
             .channel(ChannelItem(identifier: UUID(), title: "")),
-            .channel(ChannelItem(identifier: UUID(), title: "")),
-            .channel(ChannelItem(identifier: UUID(), title: "")),
-            .channel(ChannelItem(identifier: UUID(), title: "")),
+            .channel(ChannelItem(identifier: UUID(), title: ""))
         ]
     }
     
@@ -92,9 +90,7 @@ class ToffeeHomeViewModel {
             .gategory(CategoriesItem(identifier: UUID(), title: "")),
             .gategory(CategoriesItem(identifier: UUID(), title: "")),
             .gategory(CategoriesItem(identifier: UUID(), title: "")),
-            .gategory(CategoriesItem(identifier: UUID(), title: "")),
-            .gategory(CategoriesItem(identifier: UUID(), title: "")),
-            .gategory(CategoriesItem(identifier: UUID(), title: "")),
+            .gategory(CategoriesItem(identifier: UUID(), title: ""))
         ]
     }
     
@@ -107,9 +103,7 @@ class ToffeeHomeViewModel {
             .moments(MomentsItem(identifier: UUID(), title: "")),
             .moments(MomentsItem(identifier: UUID(), title: "")),
             .moments(MomentsItem(identifier: UUID(), title: "")),
-            .moments(MomentsItem(identifier: UUID(), title: "")),
-            .moments(MomentsItem(identifier: UUID(), title: "")),
-            .moments(MomentsItem(identifier: UUID(), title: "")),
+            .moments(MomentsItem(identifier: UUID(), title: ""))
         ]
     }
     
@@ -122,9 +116,7 @@ class ToffeeHomeViewModel {
             .trendeing(TrandingItem(identifier: UUID(), title: "")),
             .trendeing(TrandingItem(identifier: UUID(), title: "")),
             .trendeing(TrandingItem(identifier: UUID(), title: "")),
-            .trendeing(TrandingItem(identifier: UUID(), title: "")),
-            .trendeing(TrandingItem(identifier: UUID(), title: "")),
-            .trendeing(TrandingItem(identifier: UUID(), title: "")),
+            .trendeing(TrandingItem(identifier: UUID(), title: ""))
         ]
     }
 }
