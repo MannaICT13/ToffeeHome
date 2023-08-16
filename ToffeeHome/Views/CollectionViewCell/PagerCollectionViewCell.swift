@@ -9,8 +9,8 @@ import UIKit
 
 class PagerCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "PagerCollectionViewCell"
-    fileprivate var numberOfItems = 7
-    fileprivate let imageNames = ["one.jpg","two.jpg","three.jpg","four.jpg","five.jpg","six.jpg","seven.jpg"]
+    fileprivate var numberOfItems = 5
+    fileprivate let imageNames = ["one.jpg","two.jpg","three.jpg","four.jpg","five.jpg"]
     
     @IBOutlet private weak var pagerView: FSPagerView! {
         didSet {
