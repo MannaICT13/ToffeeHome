@@ -62,7 +62,7 @@ class ToffeeHomeViewModel {
     func setFeedData(for index: Int)-> FeedCollectionViewCellViewModel? {
         let episode = episodes[index]
         
-        return  FeedCollectionViewCellViewModel(feedImage: episode.image?.original ?? "",
+        return  FeedCollectionViewCellViewModel(feedImage: episode.image?.medium ?? "",
                                                 runtime: episode.runtime ?? .zero,
                                                 episodeName: episode.name ?? "",
                                                 sesson: episode.season ?? .zero)
