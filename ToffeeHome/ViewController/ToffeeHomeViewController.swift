@@ -32,6 +32,7 @@ class ToffeeHomeViewController: UIViewController {
             collectionView.reloadData()
         }
     }
+    private let refreshControl = UIRefreshControl()
     private let viewModel = ToffeeHomeViewModel()
     
     override func viewDidLoad() {
@@ -39,6 +40,16 @@ class ToffeeHomeViewController: UIViewController {
         networkMonitoring()
         setupViews()
         fetchFeedItems()
+    }
+    
+    private func setupViews() {
+        isLoading = true
+        view.backgroundColor = .white
+        setupCollectionView()
+        configureCompositionalLayout()
+        configurediffableDataSource()
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
     }
     
     private func networkMonitoring() {
@@ -60,13 +71,11 @@ class ToffeeHomeViewController: UIViewController {
         }
     }
     
-    private func setupViews() {
+    @objc private func refreshData(_ sender: UIRefreshControl) {
         isLoading = true
-        view.backgroundColor = .white
-        setupCollectionView()
-        configureCompositionalLayout()
-        configurediffableDataSource()
-    }
+        fetchFeedItems()
+        sender.endRefreshing()
+     }
     
     private func fetchFeedItems() {
         viewModel.getEpisodesData()
