@@ -21,7 +21,7 @@ class PopularTVChannelsCollectionViewCell: UICollectionViewCell {
     var isLoading: Bool? {
         didSet {
             guard let isLoading = isLoading else { return }
-            isLoading ? ToffeeLoader().startSmartShining(contentView): ToffeeLoader().stopSmartShining(contentView)
+            isLoading ? ToffeeLoader().startShining(channelImageView): ToffeeLoader().stopShining(channelImageView)
         }
     }
     

@@ -20,18 +20,20 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     
     static let reuseIdentifier = "CategoriesCollectionViewCell"
     let callback = Callback()
+    private let radius = CGFloat(16.0)
     
     var isLoading: Bool? {
         didSet {
             guard let isLoading = isLoading else { return }
-            isLoading ? ToffeeLoader().startSmartShining(contentView): ToffeeLoader().stopSmartShining(contentView)
+            isLoading ? ToffeeLoader().startShining(topImageView): ToffeeLoader().stopShining(topImageView)
+            isLoading ? ToffeeLoader().startShining(bottomImageView) : ToffeeLoader().stopShining(bottomImageView)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        topImageView.layer.cornerRadius = 16.0
-        bottomImageView.layer.cornerRadius = 16.0
+        topImageView.layer.cornerRadius = radius
+        bottomImageView.layer.cornerRadius = radius
     }
     
     @IBAction private func topCategoryTapped(_ sender: UIButton) {
