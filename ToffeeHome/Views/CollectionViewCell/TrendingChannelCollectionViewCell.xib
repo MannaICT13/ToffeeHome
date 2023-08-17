@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,15 +28,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="151" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shafin" translatesAutoresizingMaskIntoConstraints="NO" id="jwv-Iy-fgE">
-                                                <rect key="frame" x="16" y="0.0" width="119" height="80"/>
+                                                <rect key="frame" x="35.666666666666657" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="nVf-3L-C4S"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="jwv-Iy-fgE" firstAttribute="leading" secondItem="cuf-Zw-yzR" secondAttribute="leading" constant="16" id="4C4-FK-q7m"/>
                                             <constraint firstAttribute="bottom" secondItem="jwv-Iy-fgE" secondAttribute="bottom" id="7Qy-8V-7dd"/>
+                                            <constraint firstItem="jwv-Iy-fgE" firstAttribute="centerX" secondItem="cuf-Zw-yzR" secondAttribute="centerX" id="MvS-es-8Ij"/>
                                             <constraint firstAttribute="height" constant="80" id="ZQk-yX-Bei"/>
-                                            <constraint firstAttribute="trailing" secondItem="jwv-Iy-fgE" secondAttribute="trailing" constant="16" id="mZe-63-Lr1"/>
+                                            <constraint firstItem="jwv-Iy-fgE" firstAttribute="centerY" secondItem="cuf-Zw-yzR" secondAttribute="centerY" id="pGo-4x-WDo"/>
                                             <constraint firstItem="jwv-Iy-fgE" firstAttribute="top" secondItem="cuf-Zw-yzR" secondAttribute="top" id="rLr-oV-rhu"/>
                                         </constraints>
                                     </view>

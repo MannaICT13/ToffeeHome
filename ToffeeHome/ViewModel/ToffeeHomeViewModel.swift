@@ -8,12 +8,19 @@
 import Foundation
 import Combine
 
+extension ToffeeHomeViewModel {
+    class Callback {
+        var didSuccess: ([Episode]) -> Void = { _ in }
+        var didFailure: (String) -> Void  = { _ in }
+    }
+}
+
 class ToffeeHomeViewModel {
-    var didSuccess: ([Episode]) -> Void = { _ in }
-    var didFailure: (String) -> Void  = { _ in }
-    
     private var cancellables = Set<AnyCancellable>()
     private var episodes = [Episode]()
+    
+    let callback = Callback()
+    
     /*
      func getEpisodesData() {
          NetworkManager.shared.requestData(
@@ -39,9 +46,9 @@ class ToffeeHomeViewModel {
     func getEpisodesData() {
         HomeCombineNetworkService.shared.getPosts {[weak self] response in
             self?.episodes = response ?? []
-            self?.didSuccess(self?.episodes ?? [])
+            self?.callback.didSuccess(self?.episodes ?? [])
         } failure: {[weak self] error in
-            self?.didFailure(error)
+            self?.callback.didFailure(error)
         }
     }
     

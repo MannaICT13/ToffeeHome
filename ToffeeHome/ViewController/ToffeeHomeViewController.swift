@@ -29,23 +29,29 @@ class ToffeeHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+        fetchFeedItems()
+    }
+    
+    private func setupViews() {
         view.backgroundColor = .white
-        
+        setupCollectionView()
+        configureCompositionalLayout()
+        configurediffableDataSource()
+    }
+    
+    private func fetchFeedItems() {
         viewModel.getEpisodesData()
         
-        viewModel.didFailure = {error in
+        viewModel.callback.didFailure = {error in
             print(error)
         }
         
-        viewModel.didSuccess = {[weak self] episodes in
+        viewModel.callback.didSuccess = {[weak self] episodes in
             DispatchQueue.main.async {
                 self?.updateFeedSection()
             }
         }
-        
-        setupCollectionView()
-        configureCompositionalLayout()
-        configurediffableDataSource()
     }
     
     private func updateFeedSection() {
@@ -122,7 +128,7 @@ extension ToffeeHomeViewController {
                 cell.callback.didTappedTopCategory = { [weak self] in
                     guard self == self else { return }
                     print("Top Category Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
-
+                    
                 }
                 cell.callback.didTappedBottomCategory = {[weak self] in
                     guard self == self else { return }
@@ -135,7 +141,7 @@ extension ToffeeHomeViewController {
                 cell.callback.didTappedMoment = {[weak self] in
                     guard self == self else { return }
                     print("Moments Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
-
+                    
                 }
                 return cell
                 
