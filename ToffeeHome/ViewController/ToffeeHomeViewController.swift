@@ -57,7 +57,7 @@ class ToffeeHomeViewController: UIViewController {
         }
         
         viewModel.callback.didSuccess = {[weak self] episodes in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 self?.isLoading = false
                 self?.updateFeedSection()
             }
