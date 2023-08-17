@@ -14,7 +14,6 @@ protocol GenericAPIClient {
 }
 
 class NetworkManager: GenericAPIClient {
-    static let shared = NetworkManager()
     private var cancellables = Set<AnyCancellable>()
     
     func requestData<T: Decodable>(
@@ -82,6 +81,5 @@ class NetworkManager: GenericAPIClient {
                 .store(in: &self.cancellables)
         }
     }
-    private init() { }
 }
 

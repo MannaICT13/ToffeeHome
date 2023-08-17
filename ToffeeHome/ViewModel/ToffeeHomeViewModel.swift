@@ -18,7 +18,7 @@ extension ToffeeHomeViewModel {
 class ToffeeHomeViewModel {
     private var cancellables = Set<AnyCancellable>()
     private var episodes = [Episode]()
-    
+    private let homeCombineNetworkService: HomeCombineNetworkService = .init()
     let callback = Callback()
     
     /*
@@ -44,7 +44,7 @@ class ToffeeHomeViewModel {
 
     // Here another way of fetching data
     func getEpisodesData() {
-        HomeCombineNetworkService.shared.getPosts {[weak self] response in
+        homeCombineNetworkService.getPosts {[weak self] response in
             self?.episodes = response ?? []
             self?.callback.didSuccess(self?.episodes ?? [])
         } failure: {[weak self] error in

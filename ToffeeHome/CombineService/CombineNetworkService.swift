@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 class HomeCombineNetworkService {
-    static let shared = HomeCombineNetworkService()
+    private let networkManager: NetworkManager = .init()
     private var cancellables = Set<AnyCancellable>()
     
     func getPosts(success: @escaping (_ response: [Episode]?) -> Void,
                 failure: @escaping ( _ error: String) -> Void) {
         
-        NetworkManager.shared.requestData(endpoint: .episodes,
+        networkManager.requestData(endpoint: .episodes,
                                      method: .get,
                                      type: [Episode].self)
             .sink { completion in
@@ -32,7 +32,5 @@ class HomeCombineNetworkService {
     }
     
     // MARK: - Implement more func for different endpoints
-    
-    private init() { }
 }
 
