@@ -114,7 +114,7 @@
 		292BD8392A80C9AD002498B7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				295FC83A2A8DD70D00D9435E /* ABLoaderView */,
+				295FC83A2A8DD70D00D9435E /* ToffeeLoaderView */,
 				292BD83A2A80C9D7002498B7 /* FSPagerView */,
 			);
 			path = Helpers;
@@ -230,12 +230,12 @@
 			path = CombineService;
 			sourceTree = "<group>";
 		};
-		295FC83A2A8DD70D00D9435E /* ABLoaderView */ = {
+		295FC83A2A8DD70D00D9435E /* ToffeeLoaderView */ = {
 			isa = PBXGroup;
 			children = (
 				295FC83B2A8DD72400D9435E /* ToffeeLoaderView.swift */,
 			);
-			name = ABLoaderView;
+			name = ToffeeLoaderView;
 			sourceTree = "<group>";
 		};
 		297E9DA12A82279100D2491F /* Extensions */ = {
