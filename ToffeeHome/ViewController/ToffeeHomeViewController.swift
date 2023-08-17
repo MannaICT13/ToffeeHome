@@ -36,8 +36,28 @@ class ToffeeHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        networkMonitoring()
         setupViews()
         fetchFeedItems()
+    }
+    
+    private func networkMonitoring() {
+        NotificationCenter.default.addObserver(self, selector: #selector(internetConnectionEstablished), name: .internetConnectionEstablished, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(internetConnectionLost), name: .internetConnectionLost, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func internetConnectionEstablished() {
+        print("Connection Establish!")
+    }
+    
+    @objc private func internetConnectionLost() {
+        DispatchQueue.main.async {
+            self.showAlert(title: "Connection Error", message: "You're offline please check your connection.")
+        }
     }
     
     private func setupViews() {
@@ -69,6 +89,16 @@ class ToffeeHomeViewController: UIViewController {
         snapshot.appendItems(viewModel.feedItems, toSection: .feed)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
+    
+    func showAlert(title: String, message: String) {
+         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+         alertController.addAction(okAction)
+
+         DispatchQueue.main.async {
+             self.present(alertController, animated: true, completion: nil)
+         }
+     }
 }
 
 extension ToffeeHomeViewController {
