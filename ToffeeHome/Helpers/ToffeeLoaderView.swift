@@ -8,22 +8,23 @@
 import Foundation
 import UIKit
 
-public class ToffeeLoader {
+class ToffeeLoader {
     public init() {}
-    public func startShining(_ view: UIView) {
+    
+    func startShining(_ view: UIView) {
         view.layoutIfNeeded()
         animate(view: view, start: true)
     }
     
-    public func stopShining(_ view: UIView) {
+    func stopShining(_ view: UIView) {
         animate(view: view, start: false)
     }
     
-    public func startSmartShining(_ view: UIView) {
+    func startSmartShining(_ view: UIView) {
         addLoader(view, start: true)
     }
     
-    public func stopSmartShining(_ view: UIView) {
+    func stopSmartShining(_ view: UIView) {
         addLoader(view, start: false)
     }
     
