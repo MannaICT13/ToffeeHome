@@ -28,10 +28,10 @@ class CustomHeaderView: UICollectionReusableView {
         }
     }
     
-    var isRightbuttonHidden: Bool? {
+    var isRightButtonHidden: Bool? {
         didSet {
-            guard let  isRightbuttonHidden = isRightbuttonHidden else { return }
-            rightButtonOutlet.isHidden = isRightbuttonHidden
+            guard let  isRightButtonHidden = isRightButtonHidden else { return }
+            rightButtonOutlet.isHidden = isRightButtonHidden
         }
     }
     

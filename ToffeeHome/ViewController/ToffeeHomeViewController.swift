@@ -195,7 +195,7 @@ extension ToffeeHomeViewController {
         let momentsSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: SupplementraryHeader.headerElementKindOfMoments) { supplementaryView, elementKind, indexPath in
             supplementaryView.title = "Moments"
             supplementaryView.isLoading = self.isLoading
-            supplementaryView.isRightbuttonHidden = true
+            supplementaryView.isRightButtonHidden = true
             supplementaryView.callback.didTappedSeeAll = {[weak self] in
                 guard self == self else { return }
                 print("did Tapped See All....Category")
@@ -213,7 +213,7 @@ extension ToffeeHomeViewController {
         
         let feedSupplementaryRegistration = UICollectionView.SupplementaryRegistration<CustomHeaderView>(supplementaryNib: UINib(nibName: CustomHeaderView.reuseableIdentifier, bundle: nil), elementKind: SupplementraryHeader.headerElementKindOfFeed) { supplementaryView, elementKind, indexPath in
             supplementaryView.title = "Feed"
-            supplementaryView.isRightbuttonHidden = true
+            supplementaryView.isRightButtonHidden = true
             supplementaryView.backgroundColor = .white
             supplementaryView.isLoading = self.isLoading
             supplementaryView.callback.didTappedSeeAll = {[weak self] in
