@@ -26,15 +26,13 @@ class ToffeeHomeViewController: UIViewController {
     
     private var dataSource: DataSource! = nil
     private var snapshot = Snapshot()
-    
-    private let viewModel = ToffeeHomeViewModel()
-    
-    var isLoading: Bool = true {
+    private var isLoading: Bool = true {
         didSet {
             collectionView.isUserInteractionEnabled = !isLoading
             collectionView.reloadData()
         }
     }
+    private let viewModel = ToffeeHomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
