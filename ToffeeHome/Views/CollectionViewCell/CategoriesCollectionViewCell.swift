@@ -21,6 +21,13 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "CategoriesCollectionViewCell"
     let callback = Callback()
     
+    var isLoading: Bool? {
+        didSet {
+            guard let isLoading = isLoading else { return }
+            isLoading ? ToffeeLoader().startSmartShining(contentView): ToffeeLoader().stopSmartShining(contentView)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         topImageView.layer.cornerRadius = 16.0

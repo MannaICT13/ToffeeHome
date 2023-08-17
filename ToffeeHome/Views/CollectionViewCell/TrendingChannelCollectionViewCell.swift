@@ -21,6 +21,13 @@ class TrendingChannelCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "TrendingChannelCollectionViewCell"
     let callback = Callback()
     
+    var isLoading: Bool? {
+        didSet {
+            guard let isLoading = isLoading else { return }
+            isLoading ? ToffeeLoader().startSmartShining(contentView): ToffeeLoader().stopSmartShining(contentView)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         profileImageView.layer.cornerRadius = 40.0

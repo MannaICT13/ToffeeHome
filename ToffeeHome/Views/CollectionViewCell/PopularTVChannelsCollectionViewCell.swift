@@ -18,6 +18,13 @@ class PopularTVChannelsCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "PopularTVChannelsCollectionViewCell"
     let callback = Callback()
     
+    var isLoading: Bool? {
+        didSet {
+            guard let isLoading = isLoading else { return }
+            isLoading ? ToffeeLoader().startSmartShining(contentView): ToffeeLoader().stopSmartShining(contentView)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         channelImageView.layer.cornerRadius = 40.0

@@ -28,6 +28,13 @@ class PagerCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var isLoading: Bool? {
+        didSet {
+            guard let isLoading = isLoading else { return }
+            isLoading ? ToffeeLoader().startSmartShining(contentView): ToffeeLoader().stopSmartShining(contentView)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         pagerView.delegate = self

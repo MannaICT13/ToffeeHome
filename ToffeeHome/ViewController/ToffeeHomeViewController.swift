@@ -16,8 +16,10 @@ class ToffeeHomeViewController: UIViewController {
         case trendingChannels
         case feed
     }
-    
-    private var collectionView: UICollectionView! = nil
+        
+    private lazy var collectionView: UICollectionView = {
+        return UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout.init())
+    }()
     
     typealias DataSource = UICollectionViewDiffableDataSource<Section, DisplayableWrapper>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, DisplayableWrapper>
@@ -27,6 +29,13 @@ class ToffeeHomeViewController: UIViewController {
     
     private let viewModel = ToffeeHomeViewModel()
     
+    var isLoading: Bool = true {
+        didSet {
+            collectionView.isUserInteractionEnabled = !isLoading
+            collectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -34,6 +43,7 @@ class ToffeeHomeViewController: UIViewController {
     }
     
     private func setupViews() {
+        isLoading = true
         view.backgroundColor = .white
         setupCollectionView()
         configureCompositionalLayout()
@@ -44,11 +54,13 @@ class ToffeeHomeViewController: UIViewController {
         viewModel.getEpisodesData()
         
         viewModel.callback.didFailure = {error in
+            self.isLoading = false
             print(error)
         }
         
         viewModel.callback.didSuccess = {[weak self] episodes in
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self?.isLoading = false
                 self?.updateFeedSection()
             }
         }
@@ -64,7 +76,6 @@ class ToffeeHomeViewController: UIViewController {
 extension ToffeeHomeViewController {
     
     private func setupCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout.init())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
@@ -112,33 +123,37 @@ extension ToffeeHomeViewController {
             
             switch self.dataSource.snapshot().sectionIdentifiers[indexPath.section] {
             case .pagerView:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PagerCollectionViewCell.reuseIdentifier, for: indexPath) as! PagerCollectionViewCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PagerCollectionViewCell.reuseIdentifier, for: indexPath) as? PagerCollectionViewCell
+                cell?.isLoading = self.isLoading
                 return cell
                 
             case .channels:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularTVChannelsCollectionViewCell.reuseIdentifier, for: indexPath) as! PopularTVChannelsCollectionViewCell
-                cell.callback.didTappedChannel = {[weak self] in
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularTVChannelsCollectionViewCell.reuseIdentifier, for: indexPath) as? PopularTVChannelsCollectionViewCell
+                cell?.isLoading = self.isLoading
+                cell?.callback.didTappedChannel = {[weak self] in
                     guard self == self else { return }
                     print("Channel Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
                 }
                 return cell
                 
             case .categories:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCollectionViewCell.reuseIdentifier, for: indexPath) as! CategoriesCollectionViewCell
-                cell.callback.didTappedTopCategory = { [weak self] in
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCollectionViewCell.reuseIdentifier, for: indexPath) as? CategoriesCollectionViewCell
+                cell?.isLoading = self.isLoading
+                cell?.callback.didTappedTopCategory = { [weak self] in
                     guard self == self else { return }
                     print("Top Category Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
                     
                 }
-                cell.callback.didTappedBottomCategory = {[weak self] in
+                cell?.callback.didTappedBottomCategory = {[weak self] in
                     guard self == self else { return }
                     print("Bottom Category Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
                 }
                 return cell
                 
             case .moments:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MomentsCollectionViewCell.reuseIdentifier, for: indexPath) as! MomentsCollectionViewCell
-                cell.callback.didTappedMoment = {[weak self] in
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MomentsCollectionViewCell.reuseIdentifier, for: indexPath) as? MomentsCollectionViewCell
+                cell?.isLoading = self.isLoading
+                cell?.callback.didTappedMoment = {[weak self] in
                     guard self == self else { return }
                     print("Moments Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
                     
@@ -146,16 +161,18 @@ extension ToffeeHomeViewController {
                 return cell
                 
             case .trendingChannels:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingChannelCollectionViewCell.reuseIdentifier, for: indexPath) as! TrendingChannelCollectionViewCell
-                cell.callback.didTappedFollow = {[weak self] in
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingChannelCollectionViewCell.reuseIdentifier, for: indexPath) as? TrendingChannelCollectionViewCell
+                cell?.isLoading = self.isLoading
+                cell?.callback.didTappedFollow = {[weak self] in
                     guard self == self else { return }
                     print("Trending Tapped.... section:\(indexPath.section) and row: \(indexPath.row)")
                 }
                 return cell
                 
             case .feed:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
-                cell.viewModel = self.viewModel.setFeedData(for: indexPath.row)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.reuseIdentifier, for: indexPath) as? FeedCollectionViewCell
+                cell?.isLoading = self.isLoading
+                cell?.viewModel = self.viewModel.setFeedData(for: indexPath.row)
                 return cell
             }
         })
