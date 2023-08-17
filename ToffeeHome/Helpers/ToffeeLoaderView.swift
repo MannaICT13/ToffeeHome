@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 class ToffeeLoader {
-    public init() {}
-    
     func startShining(_ view: UIView) {
         view.layoutIfNeeded()
         animate(view: view, start: true)
