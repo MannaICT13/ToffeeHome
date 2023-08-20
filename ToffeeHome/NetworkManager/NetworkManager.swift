@@ -81,5 +81,33 @@ class NetworkManager: GenericAPIClient {
                 .store(in: &self.cancellables)
         }
     }
+    
+    // For Caching............
+    private var cache: CBCache<String, Data> = CBCache()
+    
+    func requestDataWithCaching<T: Codable>(
+        endpoint: Endpoint,
+        method: HTTPMethod = .get,
+        body: Data? = nil,
+        queryParams: [String: String]? = nil,
+        type: T.Type,
+        decoder: JSONDecoder = JSONDecoder()
+    ) -> AnyPublisher<T, Error> {
+        if let cachedData = cache.getValue(forKey: endpoint.rawValue),
+           let decodedValue = try? decoder.decode(T.self, from: cachedData) {
+            return Just(decodedValue)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+        }
+        
+        return requestData(endpoint: endpoint, method: method, body: body, queryParams: queryParams, type: T.self, decoder: decoder)
+            .map { value in
+                if let data = try? JSONEncoder().encode(value) {
+                    self.cache.setValue(data, forKey: endpoint.rawValue)
+                }
+                return value
+            }
+            .eraseToAnyPublisher()
+    }
 }
 

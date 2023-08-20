@@ -13,24 +13,21 @@ class HomeCombineNetworkService {
     private var cancellables = Set<AnyCancellable>()
     
     func getPosts(success: @escaping (_ response: [Episode]?) -> Void,
-                failure: @escaping ( _ error: String) -> Void) {
+                  failure: @escaping (_ error: String) -> Void) {
         
-        networkManager.requestData(endpoint: .episodes,
-                                     method: .get,
-                                     type: [Episode].self)
-            .sink { completion in
-                switch completion {
-                case .failure(let error):
-                    failure("error is \(error.localizedDescription)")
-                case .finished:
-                    print("Finished")
-                }
-            } receiveValue: { posts in
-                success(posts)
+        networkManager.requestDataWithCaching(endpoint: .episodes,
+                                              method: .get,
+                                              type: [Episode].self)
+        .sink { completion in
+            switch completion {
+            case .failure(let error):
+                failure("error is \(error.localizedDescription)")
+            case .finished:
+                print("Finished")
             }
-            .store(in: &cancellables)
+        } receiveValue: { posts in
+            success(posts)
+        }
+        .store(in: &cancellables)
     }
-    
-    // MARK: - Implement more func for different endpoints
 }
-
