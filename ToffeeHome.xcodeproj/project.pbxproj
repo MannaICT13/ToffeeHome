@@ -13,6 +13,7 @@
 		2920D0D02A8212BA0090D375 /* MomentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */; };
 		2920D0D32A8218C80090D375 /* TrendingChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */; };
 		2920D0D42A8218C80090D375 /* TrendingChannelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */; };
+		2929C60C2A91FABB003B3A32 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2929C60B2A91FABB003B3A32 /* Cache.swift */; };
 		292BD83C2A80CA56002498B7 /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83B2A80CA56002498B7 /* FSPagerView.swift */; };
 		292BD83E2A80CAA7002498B7 /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */; };
 		292BD8402A80CABF002498B7 /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BD83F2A80CABE002498B7 /* FSPageControl.swift */; };
@@ -60,6 +61,7 @@
 		2920D0CE2A8212BA0090D375 /* MomentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MomentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		2920D0D12A8218C80090D375 /* TrendingChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingChannelCollectionViewCell.swift; sourceTree = "<group>"; };
 		2920D0D22A8218C80090D375 /* TrendingChannelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingChannelCollectionViewCell.xib; sourceTree = "<group>"; };
+		2929C60B2A91FABB003B3A32 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		292BD83B2A80CA56002498B7 /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
 		292BD83D2A80CAA7002498B7 /* FSPagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewCell.swift; sourceTree = "<group>"; };
 		292BD83F2A80CABE002498B7 /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				29C882E52A88B4D1001A075E /* NetworkManager.swift */,
+				2929C60B2A91FABB003B3A32 /* Cache.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				2920D0D32A8218C80090D375 /* TrendingChannelCollectionViewCell.swift in Sources */,
 				29C882E32A88B350001A075E /* Episodes.swift in Sources */,
 				29C882E62A88B4D1001A075E /* NetworkManager.swift in Sources */,
+				2929C60C2A91FABB003B3A32 /* Cache.swift in Sources */,
 				295FC83C2A8DD72400D9435E /* ToffeeLoaderView.swift in Sources */,
 				292BD8442A80CAEE002498B7 /* FSPagerViewLayoutAttributes.swift in Sources */,
 				2955CA382A8A22650088AB26 /* Data.swift in Sources */,
