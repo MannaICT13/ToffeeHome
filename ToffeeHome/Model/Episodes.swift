@@ -17,13 +17,15 @@ struct Episode: Codable, Hashable {
     let rating: Rating?
     let image: Image?
     let summary: String?
-}
-// MARK: - Image
-struct Image: Codable , Hashable {
-    let medium, original: String?
+    
+    // MARK: - Image
+    struct Image: Codable , Hashable {
+        let medium, original: String?
+    }
+    
+    // MARK: - Rating
+    struct Rating: Codable, Hashable {
+        let average: Double?
+    }
 }
 
-// MARK: - Rating
-struct Rating: Codable, Hashable {
-    let average: Double?
-}

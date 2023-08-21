@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ToffeeHomeViewController: UIViewController {
     enum Section {
@@ -42,6 +43,11 @@ class ToffeeHomeViewController: UIViewController {
         fetchFeedItems()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func setupViews() {
         isLoading = true
         view.backgroundColor = .white
@@ -50,6 +56,12 @@ class ToffeeHomeViewController: UIViewController {
         configurediffableDataSource()
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         collectionView.addSubview(refreshControl)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Profile", style: .plain, target: self, action: #selector(profileTapped))
+    }
+    
+    @objc private func profileTapped() {
+        let contentVC = UIHostingController(rootView: ContentView())
+        navigationController?.pushViewController(contentVC, animated: true)
     }
     
     private func networkMonitoring() {

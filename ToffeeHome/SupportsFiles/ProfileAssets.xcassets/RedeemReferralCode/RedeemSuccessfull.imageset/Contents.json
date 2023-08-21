@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "RedeemSuccessfull.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
